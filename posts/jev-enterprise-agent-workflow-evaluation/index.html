@@ -1,0 +1,638 @@
+<!DOCTYPE html><html dir="ltr" lang="zh-CN" class="overflow-y-scroll scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://garveylau.github.io/posts/jev-enterprise-agent-workflow-evaluation/"><meta name="generator" content="Astro v7.0.3"><!-- Primary meta --><title>JEV 值得接进企业 Agent 吗？我们拿真实业务试了试 | GarveyLau</title><meta name="title" content="JEV 值得接进企业 Agent 吗？我们拿真实业务试了试 | GarveyLau"><meta name="description" content="面对JEV带来的低成本决策想象，我们用真实日报业务做了一次测试。它的优势有多大，能替代什么，又有哪些错误不会随着低价一起消失？"><meta name="author" content="GarveyLau"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:site_name" content="GarveyLau"><meta property="og:title" content="JEV 值得接进企业 Agent 吗？我们拿真实业务试了试 | GarveyLau"><meta property="og:description" content="面对JEV带来的低成本决策想象，我们用真实日报业务做了一次测试。它的优势有多大，能替代什么，又有哪些错误不会随着低价一起消失？"><meta property="og:url" content="https://garveylau.github.io/posts/jev-enterprise-agent-workflow-evaluation/"><meta property="og:image" content="https://garveylau.github.io/og.png"><!-- Twitter / X --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://garveylau.github.io/posts/jev-enterprise-agent-workflow-evaluation/"><meta property="twitter:title" content="JEV 值得接进企业 Agent 吗？我们拿真实业务试了试 | GarveyLau"><meta property="twitter:description" content="面对JEV带来的低成本决策想象，我们用真实日报业务做了一次测试。它的优势有多大，能替代什么，又有哪些错误不会随着低价一起消失？"><meta property="twitter:image" content="https://garveylau.github.io/og.png"><!-- RSS autodiscovery --><link rel="alternate" type="application/rss+xml" title="GarveyLau" href="https://garveylau.github.io/rss.xml/"><!-- Filled at runtime by theme.ts to match the current background colour --><meta name="theme-color" content=""><!-- Extra head content injected by child layouts (e.g. JSON-LD, article meta) --><meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-24T06:02:11.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"JEV 值得接进企业 Agent 吗？我们拿真实业务试了试 | GarveyLau","datePublished":"2026-09-24T06:02:11.000Z","author":[{"@type":"Person","name":"GarveyLau","url":"https://github.com/GYGG"}]}</script><!--
+      Inline FOUC-prevention script: sets data-theme on <html> before
+      the browser paints. Runs synchronously, no defer/async.
+    --><script>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = stored ?? (prefersDark ? "dark" : "light");
+        const root = document.firstElementChild;
+        root?.setAttribute("data-theme", theme);
+        root?.classList.toggle("dark", theme === "dark");
+        // Expose value so theme.ts can skip re-detection.
+        window.__theme = { value: theme };
+      })();
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.2i1RQzKf.js"></script><link rel="stylesheet" href="/_astro/Footer.Cog-iDZc.css"><style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*),[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-bztu2lml-1"] { view-transition-name: \4F01\4E1A\7EA7\6570\5B57\5458\5DE5; }@layer astro { ::view-transition-old(\4F01\4E1A\7EA7\6570\5B57\5458\5DE5) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(\4F01\4E1A\7EA7\6570\5B57\5458\5DE5) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(\4F01\4E1A\7EA7\6570\5B57\5458\5DE5) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(\4F01\4E1A\7EA7\6570\5B57\5458\5DE5) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-bztu2lml-2"] { view-transition-name: agent-\6D4B\8BC4; }@layer astro { ::view-transition-old(agent-\6D4B\8BC4) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(agent-\6D4B\8BC4) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(agent-\6D4B\8BC4) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(agent-\6D4B\8BC4) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head><body class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col"><a id="skip-to-content" href="#main-content" class="bg-background text-accent absolute inset-s-16 -top-full z-50 px-3 py-2 backdrop-blur-lg transition-all focus:top-4">跳转到正文</a><header class="app-layout flex flex-col items-center justify-between sm:flex-row"><div class="border-border bg-background relative flex w-full items-baseline justify-between border-b py-4 sm:items-center sm:py-6"><a href="/" aria-label="GarveyLau 首页" class="brand-wordmark absolute py-1 leading-8 whitespace-nowrap sm:static sm:my-auto sm:leading-none"><img class="brand-symbol" src="/images/brand/prompt-compact.svg" width="32" height="32" alt="" aria-hidden="true"><span class="brand-name">GarveyLau</span></a><nav id="nav-menu" class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"><button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="打开菜单" aria-expanded="false" aria-controls="menu-items" data-label-open="打开菜单" data-label-close="关闭菜单"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden" viewBox="0 0 24 24" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M18 6 6 18M6 6l12 12" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" viewBox="0 0 24 24" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 6h16M7 12h13M10 18h10" /></svg></button><ul id="menu-items" class="[&amp;&gt;li&gt;a]:hover:text-accent mt-4 hidden w-44 grid-cols-2 place-content-center gap-2 sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0 sm:[&amp;&gt;li]:h-8 [&amp;&gt;li&gt;a]:block [&amp;&gt;li&gt;a]:px-4 [&amp;&gt;li&gt;a]:py-3 [&amp;&gt;li&gt;a]:text-center [&amp;&gt;li&gt;a]:font-medium sm:[&amp;&gt;li&gt;a]:px-2 sm:[&amp;&gt;li&gt;a]:py-1"><li class="col-span-2"><a href="/posts/" class="active-nav" aria-current="page">文章</a></li><li class="col-span-2"><a href="/archives/">时间线</a></li><li class="col-span-2"><a href="/search/">搜索</a></li><li class="col-span-2"><a href="/tags/">标签</a></li><li class="col-span-2"><a href="/about/">关于</a></li><li class="col-span-1 flex items-center justify-center"><button id="theme-btn" class="focus-outline hover:[&amp;&gt;svg]:stroke-accent relative size-12 p-4 sm:size-8" title="切换主题" aria-label="auto" aria-live="polite"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M14.828 14.828a4 4 0 1 0-5.656-5.656 4 4 0 0 0 5.656 5.656M6.343 17.657l-1.414 1.414M6.343 6.343 4.929 4.929M17.657 6.343l1.414-1.414M17.657 17.657l1.414 1.414M4 12H2M12 4V2M20 12h2M12 20v2" /></svg></button></li></ul></nav></div></header><script type="module">function e(){let e=document.querySelector(`#menu-btn`),t=document.querySelector(`#menu-items`),n=document.querySelector(`#menu-icon`),r=document.querySelector(`#close-icon`);if(!e||!t||!n||!r)return;let i=e.dataset.labelOpen??`Open menu`,a=e.dataset.labelClose??`Close menu`;e.addEventListener(`click`,()=>{let o=e.getAttribute(`aria-expanded`)===`true`;e.setAttribute(`aria-expanded`,o?`false`:`true`),e.setAttribute(`aria-label`,o?i:a),t.classList.toggle(`hidden`),t.classList.toggle(`grid`),n.classList.toggle(`hidden`),r.classList.toggle(`hidden`)})}function t(){let e=document.getElementById(`skip-to-content`);e&&e.addEventListener(`click`,e=>{if(e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0)return;e.preventDefault();let t=document.getElementById(`main-content`);t&&(t.setAttribute(`tabindex`,`-1`),t.addEventListener(`blur`,()=>t.removeAttribute(`tabindex`),{once:!0}),t.focus(),t.scrollIntoView({behavior:`smooth`}))})}e(),document.addEventListener(`astro:after-swap`,e),t(),document.addEventListener(`astro:after-swap`,t);</script><div class="app-layout flex items-center justify-start"><a id="back-button" href="/" class="group inline-flex items-center gap-1 hover:text-accent focus-outline hover:text-foreground/75 -ms-2 mt-8 mb-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 6-6 6 6 6" /></svg><span>返回</span></a></div><script type="module">function e(){let e=document.querySelector(`#back-button`),t=sessionStorage.getItem(`backUrl`);t&&e&&(e.href=t)}document.addEventListener(`astro:page-load`,e),e();</script><main id="main-content" class="app-layout post-page" data-pagefind-body><div class="post-heading"><p class="post-eyebrow">企业级数字员工</p><h1 style="view-transition-name:jev-enterprise-agent-workflow-evaluation" class="text-accent inline-block text-2xl font-bold sm:text-3xl">JEV 值得接进企业 Agent 吗？我们拿真实业务试了试</h1><div class="my-2 flex items-center gap-2"><div class="text-muted-foreground flex items-center gap-x-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 min-w-5.5" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM16 3v4M8 3v4M4 11h16M7 14h.013M10.01 14h.005M13.01 14h.005M16.015 14h.005M13.015 17h.005M7.01 17h.005M10.01 17h.005" /></svg><time class="text-sm sm:text-base" datetime="2026-09-24T06:02:11.000Z">2026年9月24日</time></div><span aria-hidden="true" class="text-muted-foreground max-sm:hidden hidden">|</span></div><p class="post-description">面对JEV带来的低成本决策想象，我们用真实日报业务做了一次测试。它的优势有多大，能替代什么，又有哪些错误不会随着低价一起消失？</p></div><div class="reading-layout"><article id="article" class="mt-8 w-full app-prose max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"><p>一个AI模型，如果不再负责写文章、生成代码，而是专心帮软件做选择，会发生什么？</p>
+<p>这是JEV让我感兴趣的地方。<a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">TypeSafe对它的定位</a>很明确：把输入变成软件可以直接使用的结构化决策。对于正在做企业Agent的人，这个方向很有吸引力。很多时候，我们调用一次大模型，最后需要的只是一个项目编号、一个分类，或者“这件事应该交给谁”。</p>
+<p>但看过介绍之后，我更想知道另一件事：<strong>离开演示，放进每天真的有人在用的业务流程，JEV还能带来多少价值？</strong></p>
+<p>于是，我们拿交付团队收集日报的场景做了测试。没有另外编一套展示题，而是从实际消息和项目目录里取输入，让JEV、Qwen和DeepSeek做同一项判断。</p>
+<p>先说我的感受：这次测试给了我认真考虑JEV的理由。在一个明确的业务节点上，它用很低的调用成本，取得了接近部分通用模型策略的判断效果。不过，要把这个优势变成可以放心运行的企业服务，还需要解决一些不那么醒目的问题。</p>
+<h2 id="先把它放进一件真实的小事">先把它放进一件真实的小事</h2>
+<p>我们团队有一个钉钉交付小助理，每天向同事收集工作日报。同事告诉它做了什么、花了多久、参与了哪些项目，它负责更新AI表格，缺什么再问什么。</p>
+<p>如果你做过类似系统，就知道消息通常不会像表单一样整齐。有人先发工作内容，过一会儿补“8小时”；有人只写客户简称；有人临时帮另一个项目做了事，人员清单还没有绑定。助理需要记录实际发生的工作，不能因为名单没更新就拒绝提交。</p>
+<p>这件事已经在运行，只是Agent处理起来有时比较慢。我们在上一篇<a href="/posts/enterprise-agent-fast-workflow/">《让 Agent 少走重复的路》</a>里做了第一步优化：把历史任务中的消息、工具调用、返回和保存结果串起来，观察哪些步骤一再出现。</p>
+<p>补充工时之前，先找当天记录；更正数值时，替换而不是累加；写入之后，回读确认。这些执行关系反复出现，追问和失败恢复也有规律。开发者与Coding Agent对照真实轨迹，把它们整理成Fast Workflow，外围Agent继续负责沟通和例外。</p>
+<p>因此，这次尝试有一个很具体的起点：<strong>工作流已经有了，我们想知道里面的某个判断，能不能换成更便宜的实现。</strong></p>
+<p><img src="/images/posts/jev-workflow/two-llm-workflow.svg" alt="日报搜集的新版流程：蓝色为程序执行，橘色为L1和L2模型判断，灰色为同事与外围Agent。本次只测L2项目匹配。"></p>
+<p>这张图是基于实际经验重新设计的新版候选流程，不代表我们已经把JEV部署到了线上。它把模型的工作分成两段。</p>
+<p>第一段L1读懂这次消息：说的是哪天，哪些是正文，“再加1小时”是增加还是更正，提到了哪些项目。第二段L2才拿着项目原话，对照正式目录，判断对应哪个项目。</p>
+<p>我们选中的是L2。<strong>它的选项天然存在于业务表里。</strong> 程序查出完整项目目录，再加一个“无法唯一确定”，模型就有了可以回答的选择题，不需要另一个模型提前替它出题。</p>
+<p>L1没有这么直接。用户会怎样描述工作，事先列不完；正文、日期和数值仍需要开放提取。把它整体换成本次使用的JEV Choice接口并不可行。至于查询、计算、写入和回读，程序本来就在做，也不需要为了用新模型而改造。</p>
+<h2 id="成本差距确实很大但要看它和谁比">成本差距确实很大，但要看它和谁比</h2>
+<p>我们让新版L1处理14条历史真实日报，9条通过校验，得到20个项目表述。另5条在上游就遇到了原文依据或工时校验问题，单独保留，没有手工修好后加入L2测评。候选则来自实际业务表查询得到的61项项目目录，不按人员绑定筛选。</p>
+<p>五种策略使用相同的消息、L1输出和目录，每例运行两轮。总共200次调用，都正常返回了合法结果，没有超时。下面比较的是项目匹配这一步，不是整个日报流程。</p>
+<p>先看这张图。横轴是处理每千条同类日报所需的L2调用费用，纵轴是一条日报中的项目判断是否全部正确。越靠左上，越符合我们“少花钱、把事做对”的期待。</p>
+<p><img src="/images/posts/jev-workflow/l2-cost-success.svg" alt="五种模型策略的L2成本与整条日报项目判断全对率。JEV成本最低，Qwen开推理正确率最高。横轴为对数刻度，DeepSeek横线表示价格区间。"></p>
+<p><strong>JEV最值得注意的位置，是它和Qwen关推理处在同一高度，却明显更靠左。</strong> 两者整条日报全对都是13/18，JEV调用成本低约95%。与DeepSeek开推理相比，两者项目判断同为35/40，JEV成本低约91%至95%，但整条日报全对少了一次。</p>
+<p>完整结果如下。这里的“整条日报全对”，仅要求这条日报中的所有项目判断正确，不包含正文、工时、保存等其他环节。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>策略</th><th>项目判断正确</th><th>整条日报项目全对</th><th>错误自动归属</th><th>L2中位耗时</th><th>元／千条日报L2</th></tr></thead><tbody><tr><td>Qwen3.8 Max · 开推理</td><td>38/40（95%）</td><td>16/18（88.9%）</td><td>2次</td><td>8.96秒</td><td>95.93</td></tr><tr><td>Qwen3.8 Max · 关推理</td><td>34/40（85%）</td><td>13/18（72.2%）</td><td>6次</td><td>1.34秒</td><td>38.85</td></tr><tr><td>DeepSeek V4.1 Flash · 开推理</td><td>35/40（87.5%）</td><td>14/18（77.8%）</td><td>5次</td><td>18.65秒</td><td>20.21–40.43</td></tr><tr><td>DeepSeek V4.1 Flash · 关推理</td><td>31/40（77.5%）</td><td>12/18（66.7%）</td><td>9次</td><td>1.38秒</td><td>3.32–6.63</td></tr><tr><td>JEV 1.13</td><td>35/40（87.5%）</td><td>13/18（72.2%）</td><td>5次</td><td>2.26秒</td><td>1.86</td></tr></tbody></table>
+<p>这已经是有意义的性价比信号，值得进入工程选型。但如果只挑最贵的Qwen开推理作参照，说“成本降低98%”，很容易让读者误以为它在所有方面都胜出了。Qwen开推理这一轮确实更准：40次项目判断对了38次，JEV是35次。</p>
+<p>更现实的经济基线是DeepSeek Flash关推理。与它相比，JEV每千条同类日报的L2费用少约1.46至4.77元，40次项目判断多对4次。不过，JEV中位耗时2.26秒，慢于DeepSeek关推理的1.38秒，也慢于Qwen关推理的1.34秒。</p>
+<p>所以，这次吸引我的并不是“JEV全面领先”，而是：<strong>在一项真实业务判断上，我们多了一个成本明显更低、判断效果仍有竞争力的选项。</strong></p>
+<p>这组数据也有清楚的范围。只有9条日报，重复两轮并不等于18条独立案例；本轮为统一适配，按项目逐个调用，再累计到整条日报，因此费用和时间不能直接套到原生批量L2或线上系统。图中的DeepSeek横线是忙闲价格区间，不是准确率置信区间。</p>
+<h2 id="它选错的时候看起来也很正常">它选错的时候，看起来也很正常</h2>
+<p>把错题拿出来看，比比较排行榜更有意思。</p>
+<p>20个项目表述里，8个可以唯一匹配。这8个项目，两轮测试中五种策略全部正确。真正拉开差距的是另外12个：目录里没有明确对应，或者原话不足以区分几个候选，本应交给外层确认。</p>
+<p>举一个真实案例的结构，客户名作了替换。同事只说“某保险公司的项目”，目录里却有这家公司的K8S、PM、TM三个独立项目。业务已经确认它们不是同一个项目。只知道客户名，还不足以决定这次工时应该归到哪一个。</p>
+<p>JEV有一轮直接选了PM。</p>
+<p>它没有编造项目，没有返回坏掉的JSON，也没有调用失败。选出的编号就在目录里，程序检查能够通过。但这次选择缺少依据，仍然是错误归属。</p>
+<p>JEV的5次错误都属于这种“该确认却选了”的问题，涉及客户简称、产品平台名和未明确客户的产品版本。其他模型也会犯同类错误。这24次应待确认的判断中，Qwen开推理正确退出22次，JEV和DeepSeek开推理各19次，Qwen关推理18次，DeepSeek关推理15次。</p>
+<p><strong>限制输出范围，能让软件更容易接住答案，却不能保证答案在业务上成立。</strong> 这是我觉得企业使用者尤其需要留意的一点。</p>
+<p>“答错就交给大模型”听起来很好，问题在于，系统未必知道这次答错了。一个合法但错误的项目编号，不会自己触发异常。JEV提供的置信度是否能帮助识别这些情况，也需要另外校准；本轮没有测试这个能力，不能把它当作已经成立的兜底。</p>
+<p>这也解释了为什么我们需要保留外层Agent和必要的确认路径。一个便宜的决策节点，可以缩短常见路径，却不能独自承担整件事情的可靠性。</p>
+<h2 id="用好jev要先把选择题和填空题拆开">用好JEV，要先把“选择题”和“填空题”拆开</h2>
+<p>回到最初的问题：围绕JEV的期待，究竟有没有真实商业意义？</p>
+<p><strong>从这次测试看，有，而且已经能找到具体的位置：像L2这样的项目匹配节点。</strong> 候选来自真实业务目录，任务边界清楚，JEV以明显更低的调用成本，取得了接近部分通用模型策略的判断效果。这给出的已经是一种可落地的分工方向。</p>
+<p>理解这个方向，可以把工作流里的模型任务分成“填空题”和“选择题”。</p>
+<p>L1更像填空题。同事今天做了什么，用了多久，提到了哪个项目，这些内容无法提前穷举成选项。我们需要通用大语言模型读懂消息，提取原文、数值和修改意图。这部分能力仍然要保留。</p>
+<p>L2更像选择题。项目原话已经提取出来，正式项目目录也已经查到，接下来是在有限候选中找到对应项，或者判断需要确认。这样的节点，就可以引入JEV。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>工作流里的任务</th><th>适合的分工</th></tr></thead><tbody><tr><td>从自由表达中提取正文、日期、投入和项目原话</td><td>通用大模型做“填空题”</td></tr><tr><td>将项目原话对应到已有目录</td><td>JEV做“选择题”，保留待确认分支</td></tr><tr><td>查询记录、计算工时、校验字段、写入与回读</td><td>程序执行确定性步骤</td></tr><tr><td>信息不足、特殊任务和异常沟通</td><td>外层Agent接管</td></tr></tbody></table>
+<p>这样设计的价值，是让每种能力只承担它需要承担的工作。通用大模型不必为后续每一次有限选择继续付出同样的调用成本，JEV也不需要被迫处理原本不适合它的开放提取。查询、计算和保存则留在程序里。</p>
+<p>这里有一个容易走偏的地方：为了用JEV，先让另一个模型把整段日报消化一遍，再为日期、正文和工时生成一套答案选项。这样虽然也能得到选择题，却可能重复付出了理解成本。我们这次选择L2，恰好因为它的候选本来就在项目表里，而L1提取项目原话本身也是日报流程需要完成的工作。</p>
+<p><strong>先识别业务中自然存在的选择，再把它从开放理解中拆出来，才能充分利用JEV的低成本特点。</strong></p>
+<h2 id="企业agent的降本开始变成一个流程设计问题">企业Agent的降本，开始变成一个流程设计问题</h2>
+<p>这轮实践让我对JEV的判断更明确了：它在特定环节已经展示了实用价值。对企业工作流而言，我们可以保留大模型处理开放问题的能力，同时让JEV承担合适的有限决策，让同一条流程采用不同的模型实现。</p>
+<p>当然，“可以承担L2”不等于“每次选出的项目都可以直接写入”。前面的错误说明，候选合法性校验还不够，模糊归属需要复核或确认。要把效果控制住，就应当对每个节点分别测评，确定自动处理范围，并为不能可靠处理的情况保留接管路径。本轮证明了L2的低成本判断能力，尚未证明这些错误都能被自动识别。</p>
+<p>在这个前提下，降低综合成本的路径已经很清楚：<strong>让大模型完成必要的填空，让JEV完成适合的选择，让程序完成确定的执行。</strong> 高频任务反复经过这些节点，单次调用的成本差异才有机会累积为整个系统的收益。收益的具体幅度仍要连同复核和接管一起实测，不能把L2的降幅直接当作整个Agent的降幅。</p>
+<p>这也延续了我们从Fast Workflow开始的思路。先从真实任务轨迹中整理可复用的推理与执行链，再进一步拆清每个节点需要什么能力。流程越清楚，模型替换越有依据，成本和效果也越容易分别衡量。</p>
+<p>所以，JEV带给企业Agent的启发，不只是又多了一个便宜模型。它让我们更有理由重新检查工作流：<strong>哪些地方需要大模型开放地理解，哪些地方其实只需要做一道选择题？</strong></p>
+<p>我的结论是：JEV的商业价值已经在这类有限决策节点上显现。把“选择题”和“填空题”拆开，在效果可控的基础上充分使用低成本决策，是值得采用的工作流设计方向。这次的L1与L2，就是一个具体的起点。</p></article><aside class="reading-toc" aria-label="文章目录"><details open><summary>本文目录</summary><nav><a href="#先把它放进一件真实的小事">先把它放进一件真实的小事</a><a href="#成本差距确实很大但要看它和谁比">成本差距确实很大，但要看它和谁比</a><a href="#它选错的时候看起来也很正常">它选错的时候，看起来也很正常</a><a href="#用好jev要先把选择题和填空题拆开">用好JEV，要先把“选择题”和“填空题”拆开</a><a href="#企业agent的降本开始变成一个流程设计问题">企业Agent的降本，开始变成一个流程设计问题</a></nav></details></aside></div><hr class="my-8 border-dashed"><div id="btt-btn-container" class="fixed inset-e-4 bottom-8 z-50 md:sticky md:inset-e-auto md:float-end md:me-1 translate-y-14 opacity-0 transition duration-500"><button data-button="back-to-top" class="group bg-background relative px-2 py-1 size-14 rounded-full shadow-xl md:h-8 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none md:bg-background/35 md:bg-clip-padding md:backdrop-blur-lg"><span id="progress-indicator" class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"></span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block rotate-90 md:hidden" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><span class="group-hover:text-accent sr-only text-sm md:not-sr-only"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 5v14M16 9l-4-4M8 9l4-4" /></svg>返回顶部</span></button></div><script data-astro-rerun>
+  function backToTop() {
+    const rootElement = document.documentElement;
+    const btnContainer = document.querySelector("#btt-btn-container");
+    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
+    const progressIndicator = document.querySelector("#progress-indicator");
+
+    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+      return;
+
+    backToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    let lastVisible = null;
+    function handleScroll() {
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      const scrollTop = rootElement.scrollTop;
+      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+
+      progressIndicator.style.setProperty(
+        "background-image",
+        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      );
+
+      const isVisible = scrollTop / scrollTotal > 0.3;
+
+      if (isVisible !== lastVisible) {
+        btnContainer.classList.toggle("opacity-100", isVisible);
+        btnContainer.classList.toggle("translate-y-0", isVisible);
+        btnContainer.classList.toggle("opacity-0", !isVisible);
+        btnContainer.classList.toggle("translate-y-14", !isVisible);
+        lastVisible = isVisible;
+      }
+    }
+
+    let ticking = false;
+    document.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+  backToTop();
+</script><ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8"><li><a data-astro-transition-scope="astro-bztu2lml-1" href="/tags/企业级数字员工/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>企业级数字员工</a></li><li><a data-astro-transition-scope="astro-bztu2lml-2" href="/tags/agent-测评/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>Agent 测评</a></li></ul><hr class="my-8 border-dashed"><div data-pagefind-ignore class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2"><a href="/posts/enterprise-agent-fast-workflow/" class="flex w-full gap-1 hover:opacity-75"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><div><span>上一篇</span><div class="text-accent/85 text-sm">让 Agent 少走重复的路：将企业高频任务提炼为 Fast-workflow</div></div></a></div></main><footer class="app-layout mt-auto"><div class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"><div class="flex flex-wrap items-center gap-1"><a href="https://github.com/GYGG" title="GarveyLau on Github" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg><span class="sr-only">GarveyLau on Github</span></a></div><div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row"><span>版权所有 &#169; 2026</span><span class="hidden sm:inline">&nbsp;|&nbsp;</span><span>保留所有权利。</span></div></div></footer><script type="module">var e=`theme`,t=`light`,n=`dark`;function r(){return localStorage.getItem(e)||(window.matchMedia(`(prefers-color-scheme: dark)`).matches?n:t)}var i=window.__theme?.value??r();function a(){localStorage.setItem(e,i),o()}function o(){let e=document.firstElementChild;e?.setAttribute(`data-theme`,i),e?.classList.toggle(`dark`,i===n),document.querySelector(`#theme-btn`)?.setAttribute(`aria-label`,i);let t=window.getComputedStyle(document.body).backgroundColor;document.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}function s(){o(),document.querySelector(`#theme-btn`)?.addEventListener(`click`,()=>{i=i===t?n:t,a()})}s(),document.addEventListener(`astro:after-swap`,s),document.addEventListener(`astro:before-swap`,e=>{let t=document.querySelector(`meta[name='theme-color']`)?.getAttribute(`content`);t&&e.newDocument.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}),window.matchMedia(`(prefers-color-scheme: dark)`).addEventListener(`change`,({matches:e})=>{i=e?n:t,a()});</script></body></html><script data-astro-rerun>
+  function createProgressBar() {
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    progressContainer.appendChild(progressBar);
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const computedStyle = getComputedStyle(codeBlock);
+      const hasFileNameOffset =
+        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
+
+      const topClass = hasFileNameOffset
+        ? "top-(--file-name-offset)"
+        : "-top-3";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Accessible image lightbox for article images. */
+  function initLightbox() {
+    const article = document.getElementById("article");
+    if (!article) return;
+
+    const prefersReducedMotion = () =>
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let overlay = null;
+    let lastFocused = null;
+
+    // Defer attribute mutations so they don't push the LCP timestamp.
+    // Event listeners below use delegation and don't need the attributes to exist yet.
+    requestAnimationFrame(() => {
+      const images = Array.from(article.querySelectorAll("img"));
+      for (const image of images) {
+        if (image.closest("a")) continue;
+        image.setAttribute("role", "button");
+        image.setAttribute("tabindex", "0");
+        image.setAttribute("aria-haspopup", "dialog");
+        image.setAttribute(
+          "aria-label",
+          image.alt ? `Zoom image: ${image.alt}` : "Zoom image"
+        );
+      }
+    });
+
+    function open(src, alt, trigger) {
+      if (overlay) return;
+      lastFocused = trigger ?? document.activeElement;
+
+      overlay = document.createElement("div");
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute(
+        "aria-label",
+        alt ? `Image preview: ${alt}` : "Image preview"
+      );
+      overlay.className =
+        "fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-200 motion-reduce:transition-none";
+
+      const closeButton = document.createElement("button");
+      closeButton.type = "button";
+      closeButton.setAttribute("aria-label", "Close image preview");
+      closeButton.className =
+        "absolute end-4 top-4 rounded p-2 text-3xl leading-none text-white";
+      closeButton.innerHTML = "&#10005;";
+      closeButton.addEventListener("click", close);
+
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = "";
+      image.className =
+        "max-h-[90dvh] max-w-[90dvw] cursor-default object-contain";
+
+      overlay.append(closeButton, image);
+      overlay.addEventListener("click", e => {
+        if (e.target === overlay && currentScale <= 1) close();
+      });
+
+      let currentScale = 1;
+      let translateX = 0;
+      let translateY = 0;
+      let initialDist = 0;
+      let initialScale = 1;
+      let panStartX = 0;
+      let panStartY = 0;
+      let panStartTranslateX = 0;
+      let panStartTranslateY = 0;
+      let lastTapTime = 0;
+
+      function applyTransform() {
+        image.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+      }
+
+      function resetTransform() {
+        currentScale = 1;
+        translateX = 0;
+        translateY = 0;
+        image.style.transform = "";
+      }
+
+      overlay.addEventListener(
+        "touchstart",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            initialDist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            initialScale = currentScale;
+          } else if (t.length === 1) {
+            const now = Date.now();
+            if (now - lastTapTime < 300) {
+              e.preventDefault();
+              if (currentScale > 1) {
+                resetTransform();
+              } else {
+                currentScale = 2;
+                translateX = 0;
+                translateY = 0;
+                applyTransform();
+              }
+              lastTapTime = 0;
+              panStartX = t[0].clientX;
+              panStartY = t[0].clientY;
+              panStartTranslateX = translateX;
+              panStartTranslateY = translateY;
+            } else {
+              lastTapTime = now;
+              if (currentScale > 1) {
+                panStartX = t[0].clientX;
+                panStartY = t[0].clientY;
+                panStartTranslateX = translateX;
+                panStartTranslateY = translateY;
+              }
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener(
+        "touchmove",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            e.preventDefault();
+            const dist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            currentScale = Math.min(
+              4,
+              Math.max(1, initialScale * (dist / initialDist))
+            );
+            applyTransform();
+          } else if (t.length === 1) {
+            if (currentScale > 1) {
+              e.preventDefault();
+              translateX =
+                panStartTranslateX + (t[0].clientX - panStartX) / currentScale;
+              translateY =
+                panStartTranslateY + (t[0].clientY - panStartY) / currentScale;
+              const maxX = Math.max(
+                0,
+                (image.clientWidth - overlay.clientWidth / currentScale) / 2
+              );
+              const maxY = Math.max(
+                0,
+                (image.clientHeight - overlay.clientHeight / currentScale) / 2
+              );
+              translateX = Math.min(maxX, Math.max(-maxX, translateX));
+              translateY = Math.min(maxY, Math.max(-maxY, translateY));
+              applyTransform();
+            } else {
+              e.preventDefault();
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener("touchend", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      overlay.addEventListener("touchcancel", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", onKeyDown);
+      window.__closeLightbox = close;
+
+      requestAnimationFrame(() => overlay?.classList.add("opacity-100"));
+      closeButton.focus();
+    }
+
+    function close() {
+      if (!overlay) return;
+      const el = overlay;
+      overlay = null;
+      window.__closeLightbox = null;
+
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+      lastFocused?.focus();
+      lastFocused = null;
+
+      if (prefersReducedMotion()) {
+        el.remove();
+        return;
+      }
+      const remove = () => el.remove();
+      el.addEventListener("transitionend", remove, { once: true });
+      setTimeout(remove, 250); // fallback in case transitionend never fires
+      el.classList.remove("opacity-100");
+    }
+
+    function onKeyDown(e) {
+      if (e.key === "Escape") {
+        close();
+      } else if (e.key === "Tab") {
+        trapFocus(e);
+      }
+    }
+
+    // Keep keyboard focus inside the open dialog.
+    function trapFocus(e) {
+      if (!overlay) return;
+      const focusables = overlay.querySelectorAll(
+        'a[href], button, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function triggerFromEvent(e) {
+      const image = e.target.closest("img");
+      if (!image || !article.contains(image) || image.closest("a")) return null;
+      return image;
+    }
+
+    function activate(image) {
+      open(image.currentSrc || image.src, image.alt, image);
+    }
+
+    article.addEventListener("click", e => {
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+
+    article.addEventListener("keydown", e => {
+      if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+  }
+  initLightbox();
+
+  if (!window.__lightboxSwapBound) {
+    window.__lightboxSwapBound = true;
+    document.addEventListener("astro:before-swap", () =>
+      window.__closeLightbox?.()
+    );
+  }
+
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>
