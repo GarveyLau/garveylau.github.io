@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://garveylau.github.io/sitemap-index.xml
+Sitemap: https://blog.garveylau.com/sitemap-index.xml
