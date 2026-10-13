@@ -1,0 +1,536 @@
+<!DOCTYPE html><html dir="ltr" lang="zh-CN" class="overflow-y-scroll scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://blog.garveylau.com/posts/personal-agent-tone-readable-messages/"><meta name="generator" content="Astro v7.0.3"><!-- Primary meta --><title>Personal Agent 的说话语气：像懂行的朋友一样聊天 | GarveyLau</title><meta name="title" content="Personal Agent 的说话语气：像懂行的朋友一样聊天 | GarveyLau"><meta name="description" content="我希望 Personal Agent 像懂行的朋友：先给结论，接得上用户的知识背景，交付结果时只讲必要的过程。结合个性化研究与开源实践，讨论怎样让消息更可读。"><meta name="author" content="GarveyLau"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:site_name" content="GarveyLau"><meta property="og:title" content="Personal Agent 的说话语气：像懂行的朋友一样聊天 | GarveyLau"><meta property="og:description" content="我希望 Personal Agent 像懂行的朋友：先给结论，接得上用户的知识背景，交付结果时只讲必要的过程。结合个性化研究与开源实践，讨论怎样让消息更可读。"><meta property="og:url" content="https://blog.garveylau.com/posts/personal-agent-tone-readable-messages/"><meta property="og:image" content="https://blog.garveylau.com/og.png"><!-- Twitter / X --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://blog.garveylau.com/posts/personal-agent-tone-readable-messages/"><meta property="twitter:title" content="Personal Agent 的说话语气：像懂行的朋友一样聊天 | GarveyLau"><meta property="twitter:description" content="我希望 Personal Agent 像懂行的朋友：先给结论，接得上用户的知识背景，交付结果时只讲必要的过程。结合个性化研究与开源实践，讨论怎样让消息更可读。"><meta property="twitter:image" content="https://blog.garveylau.com/og.png"><!-- RSS autodiscovery --><link rel="alternate" type="application/rss+xml" title="GarveyLau" href="https://blog.garveylau.com/rss.xml/"><!-- Filled at runtime by theme.ts to match the current background colour --><meta name="theme-color" content=""><!-- Extra head content injected by child layouts (e.g. JSON-LD, article meta) --><meta property="og:type" content="article"><meta property="article:published_time" content="2026-10-13T08:02:05.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Personal Agent 的说话语气：像懂行的朋友一样聊天 | GarveyLau","datePublished":"2026-10-13T08:02:05.000Z","author":[{"@type":"Person","name":"GarveyLau","url":"https://github.com/GYGG"}]}</script><!--
+      Inline FOUC-prevention script: sets data-theme on <html> before
+      the browser paints. Runs synchronously, no defer/async.
+    --><script>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = stored ?? (prefersDark ? "dark" : "light");
+        const root = document.firstElementChild;
+        root?.setAttribute("data-theme", theme);
+        root?.classList.toggle("dark", theme === "dark");
+        // Expose value so theme.ts can skip re-detection.
+        window.__theme = { value: theme };
+      })();
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.2i1RQzKf.js"></script><link rel="stylesheet" href="/_astro/Footer.Cog-iDZc.css"><style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*),[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-bztu2lml-1"] { view-transition-name: ai-native-app; }@layer astro { ::view-transition-old(ai-native-app) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(ai-native-app) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(ai-native-app) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(ai-native-app) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head><body class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col"><a id="skip-to-content" href="#main-content" class="bg-background text-accent absolute inset-s-16 -top-full z-50 px-3 py-2 backdrop-blur-lg transition-all focus:top-4">跳转到正文</a><header class="app-layout flex flex-col items-center justify-between sm:flex-row"><div class="border-border bg-background relative flex w-full items-baseline justify-between border-b py-4 sm:items-center sm:py-6"><a href="/" aria-label="GarveyLau 首页" class="brand-wordmark absolute py-1 leading-8 whitespace-nowrap sm:static sm:my-auto sm:leading-none"><img class="brand-symbol" src="/images/brand/prompt-compact.svg" width="32" height="32" alt="" aria-hidden="true"><span class="brand-name">GarveyLau</span></a><nav id="nav-menu" class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"><button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="打开菜单" aria-expanded="false" aria-controls="menu-items" data-label-open="打开菜单" data-label-close="关闭菜单"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden" viewBox="0 0 24 24" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M18 6 6 18M6 6l12 12" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" viewBox="0 0 24 24" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 6h16M7 12h13M10 18h10" /></svg></button><ul id="menu-items" class="[&amp;&gt;li&gt;a]:hover:text-accent mt-4 hidden w-44 grid-cols-2 place-content-center gap-2 sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0 sm:[&amp;&gt;li]:h-8 [&amp;&gt;li&gt;a]:block [&amp;&gt;li&gt;a]:px-4 [&amp;&gt;li&gt;a]:py-3 [&amp;&gt;li&gt;a]:text-center [&amp;&gt;li&gt;a]:font-medium sm:[&amp;&gt;li&gt;a]:px-2 sm:[&amp;&gt;li&gt;a]:py-1"><li class="col-span-2"><a href="/posts/" class="active-nav" aria-current="page">文章</a></li><li class="col-span-2"><a href="/archives/">时间线</a></li><li class="col-span-2"><a href="/search/">搜索</a></li><li class="col-span-2"><a href="/tags/">标签</a></li><li class="col-span-2"><a href="/about/">关于</a></li><li class="col-span-1 flex items-center justify-center"><button id="theme-btn" class="focus-outline hover:[&amp;&gt;svg]:stroke-accent relative size-12 p-4 sm:size-8" title="切换主题" aria-label="auto" aria-live="polite"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M14.828 14.828a4 4 0 1 0-5.656-5.656 4 4 0 0 0 5.656 5.656M6.343 17.657l-1.414 1.414M6.343 6.343 4.929 4.929M17.657 6.343l1.414-1.414M17.657 17.657l1.414 1.414M4 12H2M12 4V2M20 12h2M12 20v2" /></svg></button></li></ul></nav></div></header><script type="module">function e(){let e=document.querySelector(`#menu-btn`),t=document.querySelector(`#menu-items`),n=document.querySelector(`#menu-icon`),r=document.querySelector(`#close-icon`);if(!e||!t||!n||!r)return;let i=e.dataset.labelOpen??`Open menu`,a=e.dataset.labelClose??`Close menu`;e.addEventListener(`click`,()=>{let o=e.getAttribute(`aria-expanded`)===`true`;e.setAttribute(`aria-expanded`,o?`false`:`true`),e.setAttribute(`aria-label`,o?i:a),t.classList.toggle(`hidden`),t.classList.toggle(`grid`),n.classList.toggle(`hidden`),r.classList.toggle(`hidden`)})}function t(){let e=document.getElementById(`skip-to-content`);e&&e.addEventListener(`click`,e=>{if(e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0)return;e.preventDefault();let t=document.getElementById(`main-content`);t&&(t.setAttribute(`tabindex`,`-1`),t.addEventListener(`blur`,()=>t.removeAttribute(`tabindex`),{once:!0}),t.focus(),t.scrollIntoView({behavior:`smooth`}))})}e(),document.addEventListener(`astro:after-swap`,e),t(),document.addEventListener(`astro:after-swap`,t);</script><div class="app-layout flex items-center justify-start"><a id="back-button" href="/" class="group inline-flex items-center gap-1 hover:text-accent focus-outline hover:text-foreground/75 -ms-2 mt-8 mb-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 6-6 6 6 6" /></svg><span>返回</span></a></div><script type="module">function e(){let e=document.querySelector(`#back-button`),t=sessionStorage.getItem(`backUrl`);t&&e&&(e.href=t)}document.addEventListener(`astro:page-load`,e),e();</script><main id="main-content" class="app-layout post-page" data-pagefind-body><div class="post-heading"><p class="post-eyebrow">AI Native APP</p><h1 style="view-transition-name:personal-agent-tone-readable-messages" class="text-accent inline-block text-2xl font-bold sm:text-3xl">Personal Agent 的说话语气：像懂行的朋友一样聊天</h1><div class="my-2 flex items-center gap-2"><div class="text-muted-foreground flex items-center gap-x-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 min-w-5.5" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM16 3v4M8 3v4M4 11h16M7 14h.013M10.01 14h.005M13.01 14h.005M16.015 14h.005M13.015 17h.005M7.01 17h.005M10.01 17h.005" /></svg><time class="text-sm sm:text-base" datetime="2026-10-13T08:02:05.000Z">2026年10月13日</time></div><span aria-hidden="true" class="text-muted-foreground max-sm:hidden hidden">|</span></div><p class="post-description">我希望 Personal Agent 像懂行的朋友：先给结论，接得上用户的知识背景，交付结果时只讲必要的过程。结合个性化研究与开源实践，讨论怎样让消息更可读。</p></div><div class="reading-layout"><article id="article" class="mt-8 w-full app-prose max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"><p>如果要用一句话描述我希望 Personal Agent 怎么说话，我会说：像懂行的朋友一样聊天。</p>
+<p>你把事情交给他，他回来能直接告诉你结果。你问一个自己熟悉的问题，他接得上，不需要从入门知识讲起；你碰到陌生领域，他又能把影响和选择解释清楚。有不同意见时，他会说理由，也知道哪些地方还拿不准。</p>
+<p>Personal Agent 的消息，我希望也能做到这样。</p>
+<p>它可能已经查完资料、改好文件，但最后返回一大段背景铺垫和工具流水账，用户仍得自己从里面找答案。另一种回复很礼貌、很完整，却像客服话术或课堂笔记，读完总觉得隔着一层。</p>
+<p>我的判断是：要让 Personal Agent 的消息更可读，先守住几条通用原则，按用户对当前问题的熟悉程度交流，再控制执行细节的披露。下面的论文和开源案例提供了一些支持与边界；这三条仍是我对产品的要求，不能当作已经被统一验证的行业结论。</p>
+<h2 id="先把有用的话说出来">先把有用的话说出来</h2>
+<p>用户让 Agent 做一件事，回来看的第一条消息，应该先回答这件事。</p>
+<p>完成了，就说完成了什么；只做完一部分，就交代哪些还没做；卡住了，就把阻塞放在前面。问的是判断，就先给判断，再补依据。</p>
+<p>比如，让 Agent 审阅一篇草稿。以下回复都是示意，不对应真实任务。</p>
+<p>一种常见的开头是：</p>
+<blockquote><p>我已经认真阅读了这篇文章，整体来看内容比较完整，结构也比较清晰。下面我将从几个方面进行分析，希望能帮助你进一步优化。</p></blockquote>
+<p>这段看起来周到，但用户还不知道最该改哪里。</p>
+<p>我更希望它直接说：</p>
+<blockquote><p>观点已经清楚，主要问题是后半段的两个案例重复。建议删掉第二个，把第一个案例里的判断依据补上。</p></blockquote>
+<p>需要细看时，再给具体段落。这条消息已经足够让我接着做事。</p>
+<p>“好的，我来帮你”“希望这对你有帮助”“如有其他问题请随时告诉我”，也不必成为每次回复的标配。认真回答、准确措辞、尊重选择，本身就有礼貌。没有信息的开头和结尾可以直接删掉。</p>
+<p>但我也不想把这件事简化成一个字数上限。用户要深度调研、学习教程或故障分析，长文可能正是交付物。可以先用一小段说明判断和范围，再让读者进入细节。</p>
+<p>评价模型时，长回答甚至可能得到额外的优势。<a href="https://arxiv.org/abs/2404.04475">Length-Controlled AlpacaEval</a> 研究通过控制回复长度差，减轻自动评委对长回答的偏好。它支持的是“评分会受到长度影响”，并没有证明短回答总是更好，也没有直接测量结论是否应该放在首句。</p>
+<p>对我来说，这个提醒很实际：不能因为回复显得充分，就认为它对用户更有用。应该看删掉一段以后，是否损失了用户需要的事实、解释或判断。没有损失的部分，就值得考虑删掉。</p>
+<h2 id="接得上用户的语境">接得上用户的语境</h2>
+<p>懂行的朋友会知道哪些话可以直接说，哪些地方需要解释。</p>
+<p>用户熟悉的领域，不要刻意说浅。开发者问数据库迁移，可以直接讨论迁移顺序、旧库兼容和验证范围；用户已经交代过的背景，也不必原样讲回来。</p>
+<p>用户不熟悉的领域，则需要把术语转换成他能判断的影响和选择。复杂度可以留在依据里，消息先让他知道为什么要在意。</p>
+<p>假设一次更新测试发现，软件没有正确读取老用户保存的设置。面对负责修复的工程师，可以说：</p>
+<blockquote><p>这版先别发。旧配置没有迁移到新路径，升级后会回到默认设置。需要补迁移，再用已有配置走一次升级测试。</p></blockquote>
+<p>面对只关心能否交付的用户，可以说：</p>
+<blockquote><p>这版先别发。老用户更新后，之前保存的设置会失效。先修好设置保留的问题，再确认更新后的设置还在。</p></blockquote>
+<p>两段都保留了判断和原因，解释的深度不同。照顾用户的知识背景，不能把关键影响一起删掉。</p>
+<p>这里有一项很贴近的研究。<a href="https://aclanthology.org/2026.acl-long.959/">ExPerT（ACL 2026）</a> 按每次问题的领域知识调整细节、术语和概念复杂度。它的主研究有 40 名参与者，覆盖三个领域；按用户自报知识水平生成时，满意度从 3.71 提高到 4.36，满分为 5 分。</p>
+<p>这个数字来自自报知识水平的条件，自动推断有另一组较小的回访实验。满意度也不等于理解正确率。研究还使用了打字行为等线索，我更想借鉴的是其中的判断方式：<strong>用户懂不懂，应该落到当前问题上。</strong></p>
+<p>一个工程师可能很懂数据库，却不熟悉设计。即使在同一个领域，赶着做决定和准备深入学习，需要的回复也不同。不能记住“这是个专业用户”，就默认他不需要任何解释。</p>
+<p>拿不准时，也可以通过对话确认，而不是继续猜。2026 年 8 月公开的<a href="https://arxiv.org/html/2608.22266v2">专业程度澄清研究</a> 就探索了用有针对性的提问获取知识背景。它包含模拟实验和小规模角色扮演式真人评估，尚不能证明日常助手都应该主动提问。我倾向于只在答案确实会改变解释方式时问，例如：“你想了解原理，还是主要想判断对当前方案的影响？”已经有足够线索，就直接接着聊。</p>
+<p>长期偏好和本次要求也要分开。<a href="https://github.com/letta-ai/letta-code/blob/2943efe47e8c49e8ef2b78df100ba8e262c2415a/src/agent/prompts/letta.md#L101">Letta Code 的主提示词</a> 把 persona 作为默认行为，同时允许用户本次对语气、格式和细节量的明确要求改变表达。这是一项提示词约定，不代表每次输出都会正确执行，也不是自动识别用户专业水平。</p>
+<p>我认同这种分工。记住一个人平时喜欢简短回复，可以省掉重复沟通；他这次说“深入讲讲”，就应该展开。记忆应该帮助接上对话，别让它变成限制对话的旧标签。</p>
+<p>不过，允许按当前需求调整，还不等于模型能稳定做到。9 月 28 日提交、9 月 30 日修订的一篇<a href="https://arxiv.org/html/2609.34284v2">过度个性化预印本</a> 发现，在其测试的模型与任务中，单独判断时能排除的偏好，到了生成回答时仍可能被用进去。它分析的是特定实验中的决策偏差，不能概括所有助手。对产品设计的提醒是：除了存下偏好，还要检查这一次是否应该应用。</p>
+<p>对等交流还包括不同意。2026 年的 <a href="https://arxiv.org/html/2601.13722v2">OP-Bench（9 月修订版）</a> 已把不相关、重复和迎合作为过度个性化的不同评测任务。它使用经人工审查的合成数据，仍以英文单轮文本为主，不能替代中文用户的实际体验验证。但这种评测方向很值得借鉴：“让用户喜欢”之外，还要检查个人信息是否把回答带偏了。</p>
+<p>所以我说的朋友感，也包含这样的回复：“这个方案我不建议，原因是……”或者“目前只能确认到这里，还不足以下结论。”不居高临下，也不为了显得亲近而附和。</p>
+<h2 id="交付结果按需要交代过程">交付结果，按需要交代过程</h2>
+<p>Agent 在执行任务时，可能读取文件、搜索资料、调用接口，也可能经历几次失败。交付消息里，不需要把这些动作逐项复述。</p>
+<p>正常完成时，我更想看到这样的回复：</p>
+<blockquote><p>安装包能正常启动，已有设置也保留下来了。检查覆盖了安装和升级流程，账号登录还没有验证。</p></blockquote>
+<p>它交代了结果和验证范围，也留下了一个明确缺口。用了哪些命令、按什么顺序打开页面，可以放在检查记录里。</p>
+<p>如果只说“先调用工具 A，再读取文件 B，重试两次后执行命令 C”，用户还得自己判断这些动作说明了什么。Agent 应该把对结果有用的部分提炼出来。</p>
+<p>不过，过程有时就是用户需要的信息。出错、卡住、需要选择，或者发生了会影响结果的重要变化，就应该主动交代。例如：</p>
+<blockquote><p>最新公告暂时无法读取，发布时间还不能确认。草稿其他部分已经写好，这一处保留待核实标记。</p></blockquote>
+<p>用户知道缺口在哪里，哪些工作已经完成。除非正在排查访问问题，否则不必再附上每次重试。</p>
+<p>这也是 <a href="https://arxiv.org/abs/2412.10380">《Challenges in Human-Agent Communication》</a> 讨论的问题：一方面，细节过多会增加信息负担；另一方面，用户需要了解执行状态、重要副作用以及目标是否达成，才能核验和干预。这篇文章提出的是沟通挑战与研究方向，并不是“少播报胜过多播报”的实验。</p>
+<p>它让我觉得，少讲过程还需要一个前提：用户想检查时，能找到记录。主消息尽量围绕结果组织，来源、差异和详细操作留在容易访问的位置。未完成事项和关键限制仍然应该直接可见。</p>
+<p><img alt="交付信息分为主消息、核验材料和执行记录；影响判断的缺口或变化应提到主消息中" loading="lazy" decoding="async" width="720" height="738" src="/_astro/message-layers.BuNWndAE_ZAEb3j.svg" srcset=""></p>
+<p><a href="https://github.com/OpenHands/OpenHands/blob/2bdc0e9d6c5940bc3d4667fb2127fbb753b2f7c8/src/components/conversation-events/chat/event-message-components/event-group.tsx#L42">OpenHands 的聊天界面</a> 提供了一个具体例子：连续动作与观察可以折叠成可展开的摘要卡片，运行中仍显示最近动作和完成计数。它没有隐藏所有过程，一些消息和产物仍独立展示。</p>
+<p>这是源码能确认的界面机制，尚不能据此判断用户实际觉得更好读。但它说明，减少过程占用不一定全靠模型少写几句话，界面也能承担信息取舍。</p>
+<p>长任务同样需要进展消息。<a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5#user-facing-progress-updates">Claude Sonnet 5.5 的当前官方文档</a> 已专门讨论面向用户的进展更新：部分更新通过单独的内容块返回，客户端只展示普通文本时，长任务可能显得没有反馈。这是特定模型的接口行为，也说明消息体验需要模型和界面共同处理。</p>
+<p>所以我不会把“少讲过程”写成“正常执行时一直沉默”。用户需要知道它还在推进。更新最好带来新状态：完成了哪部分，发现了什么缺口，是否影响交付。反复说“正在努力处理”，很难帮助用户决定还要不要等。</p>
+<p>需要用户选择时，则先把选择的影响讲清楚。已经明确授权的操作不用重复问；确实缺一个决定，就把问题停在那个决定上。用户主动要完整排查记录或审计材料时，按要求交付。</p>
+<h2 id="最后还是要看用户能不能接着做">最后还是要看用户能不能接着做</h2>
+<p>这些要求可以写进提示词，也可以通过记忆和界面实现，但是否奏效，还得检查实际回复。</p>
+<p><a href="https://aclanthology.org/2026.acl-long.723/">MyScholarQA 的研究（ACL 2026）</a> 给了一个提醒：它在合成用户和模型评委的离线评价中表现良好，真人访谈却发现了九类未被覆盖的问题，其中就有夸大用户专业程度、偏离当前问题的个性化。这个结果来自科学文献调研场景，不能推到所有助手上，但足以说明离线高分之外仍要听用户的反馈。</p>
+<p>如果要验证这套表达方式，我会拿同样的任务事实和结果，比较不同回复，再请目标用户回答几个问题：</p>
+<ul>
+<li>第一段读完，事情完成了多少、还有什么没做，是否清楚？</li>
+<li>解释的深度是否合适，有没有重复已知内容或跳过必要概念？</li>
+<li>如果结果里有缺口或错误，能不能识别，而不是只觉得回复很流畅？</li>
+<li>需要做决定时，能否直接选下一步，还是得再问“所以这对我有什么影响”？</li>
+</ul>
+<p>这只是我建议的验证方式，还没有在某个产品上做出效果结论。字数、工具播报次数可以一起记录，但不能单独当成目标。删掉关键限制的极短回复，同样不合格。</p>
+<p>我希望 Personal Agent 最终能让我省掉一件事：不用再替它整理一次答案。</p>
+<p>像一个懂行的朋友，它知道我在问什么，接得上当前的语境，把结果和必要依据说清楚。需要深入时一起讨论，事情交代完就停下来。</p></article><aside class="reading-toc" aria-label="文章目录"><details open><summary>本文目录</summary><nav><a href="#先把有用的话说出来">先把有用的话说出来</a><a href="#接得上用户的语境">接得上用户的语境</a><a href="#交付结果按需要交代过程">交付结果，按需要交代过程</a><a href="#最后还是要看用户能不能接着做">最后还是要看用户能不能接着做</a></nav></details></aside></div><hr class="my-8 border-dashed"><div id="btt-btn-container" class="fixed inset-e-4 bottom-8 z-50 md:sticky md:inset-e-auto md:float-end md:me-1 translate-y-14 opacity-0 transition duration-500"><button data-button="back-to-top" class="group bg-background relative px-2 py-1 size-14 rounded-full shadow-xl md:h-8 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none md:bg-background/35 md:bg-clip-padding md:backdrop-blur-lg"><span id="progress-indicator" class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"></span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block rotate-90 md:hidden" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><span class="group-hover:text-accent sr-only text-sm md:not-sr-only"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 5v14M16 9l-4-4M8 9l4-4" /></svg>返回顶部</span></button></div><script data-astro-rerun>
+  function backToTop() {
+    const rootElement = document.documentElement;
+    const btnContainer = document.querySelector("#btt-btn-container");
+    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
+    const progressIndicator = document.querySelector("#progress-indicator");
+
+    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+      return;
+
+    backToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    let lastVisible = null;
+    function handleScroll() {
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      const scrollTop = rootElement.scrollTop;
+      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+
+      progressIndicator.style.setProperty(
+        "background-image",
+        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      );
+
+      const isVisible = scrollTop / scrollTotal > 0.3;
+
+      if (isVisible !== lastVisible) {
+        btnContainer.classList.toggle("opacity-100", isVisible);
+        btnContainer.classList.toggle("translate-y-0", isVisible);
+        btnContainer.classList.toggle("opacity-0", !isVisible);
+        btnContainer.classList.toggle("translate-y-14", !isVisible);
+        lastVisible = isVisible;
+      }
+    }
+
+    let ticking = false;
+    document.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+  backToTop();
+</script><ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8"><li><a data-astro-transition-scope="astro-bztu2lml-1" href="/tags/ai-native-app/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>AI Native APP</a></li></ul><hr class="my-8 border-dashed"><div data-pagefind-ignore class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2"><a href="/posts/personal-ai-assistants-local-and-cloud/" class="flex w-full gap-1 hover:opacity-75"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><div><span>上一篇</span><div class="text-accent/85 text-sm">当 AI 开始在后台工作，个人助手会走向哪里？</div></div></a></div></main><footer class="app-layout mt-auto"><div class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"><div class="flex flex-wrap items-center gap-1"><a href="https://github.com/GYGG" title="GarveyLau on Github" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg><span class="sr-only">GarveyLau on Github</span></a></div><div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row"><span>版权所有 &#169; 2026</span><span class="hidden sm:inline">&nbsp;|&nbsp;</span><span>保留所有权利。</span></div></div></footer><script type="module">var e=`theme`,t=`light`,n=`dark`;function r(){return localStorage.getItem(e)||(window.matchMedia(`(prefers-color-scheme: dark)`).matches?n:t)}var i=window.__theme?.value??r();function a(){localStorage.setItem(e,i),o()}function o(){let e=document.firstElementChild;e?.setAttribute(`data-theme`,i),e?.classList.toggle(`dark`,i===n),document.querySelector(`#theme-btn`)?.setAttribute(`aria-label`,i);let t=window.getComputedStyle(document.body).backgroundColor;document.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}function s(){o(),document.querySelector(`#theme-btn`)?.addEventListener(`click`,()=>{i=i===t?n:t,a()})}s(),document.addEventListener(`astro:after-swap`,s),document.addEventListener(`astro:before-swap`,e=>{let t=document.querySelector(`meta[name='theme-color']`)?.getAttribute(`content`);t&&e.newDocument.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}),window.matchMedia(`(prefers-color-scheme: dark)`).addEventListener(`change`,({matches:e})=>{i=e?n:t,a()});</script></body></html><script data-astro-rerun>
+  function createProgressBar() {
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    progressContainer.appendChild(progressBar);
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const computedStyle = getComputedStyle(codeBlock);
+      const hasFileNameOffset =
+        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
+
+      const topClass = hasFileNameOffset
+        ? "top-(--file-name-offset)"
+        : "-top-3";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Accessible image lightbox for article images. */
+  function initLightbox() {
+    const article = document.getElementById("article");
+    if (!article) return;
+
+    const prefersReducedMotion = () =>
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let overlay = null;
+    let lastFocused = null;
+
+    // Defer attribute mutations so they don't push the LCP timestamp.
+    // Event listeners below use delegation and don't need the attributes to exist yet.
+    requestAnimationFrame(() => {
+      const images = Array.from(article.querySelectorAll("img"));
+      for (const image of images) {
+        if (image.closest("a")) continue;
+        image.setAttribute("role", "button");
+        image.setAttribute("tabindex", "0");
+        image.setAttribute("aria-haspopup", "dialog");
+        image.setAttribute(
+          "aria-label",
+          image.alt ? `Zoom image: ${image.alt}` : "Zoom image"
+        );
+      }
+    });
+
+    function open(src, alt, trigger) {
+      if (overlay) return;
+      lastFocused = trigger ?? document.activeElement;
+
+      overlay = document.createElement("div");
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute(
+        "aria-label",
+        alt ? `Image preview: ${alt}` : "Image preview"
+      );
+      overlay.className =
+        "fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-200 motion-reduce:transition-none";
+
+      const closeButton = document.createElement("button");
+      closeButton.type = "button";
+      closeButton.setAttribute("aria-label", "Close image preview");
+      closeButton.className =
+        "absolute end-4 top-4 rounded p-2 text-3xl leading-none text-white";
+      closeButton.innerHTML = "&#10005;";
+      closeButton.addEventListener("click", close);
+
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = "";
+      image.className =
+        "max-h-[90dvh] max-w-[90dvw] cursor-default object-contain";
+
+      overlay.append(closeButton, image);
+      overlay.addEventListener("click", e => {
+        if (e.target === overlay && currentScale <= 1) close();
+      });
+
+      let currentScale = 1;
+      let translateX = 0;
+      let translateY = 0;
+      let initialDist = 0;
+      let initialScale = 1;
+      let panStartX = 0;
+      let panStartY = 0;
+      let panStartTranslateX = 0;
+      let panStartTranslateY = 0;
+      let lastTapTime = 0;
+
+      function applyTransform() {
+        image.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+      }
+
+      function resetTransform() {
+        currentScale = 1;
+        translateX = 0;
+        translateY = 0;
+        image.style.transform = "";
+      }
+
+      overlay.addEventListener(
+        "touchstart",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            initialDist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            initialScale = currentScale;
+          } else if (t.length === 1) {
+            const now = Date.now();
+            if (now - lastTapTime < 300) {
+              e.preventDefault();
+              if (currentScale > 1) {
+                resetTransform();
+              } else {
+                currentScale = 2;
+                translateX = 0;
+                translateY = 0;
+                applyTransform();
+              }
+              lastTapTime = 0;
+              panStartX = t[0].clientX;
+              panStartY = t[0].clientY;
+              panStartTranslateX = translateX;
+              panStartTranslateY = translateY;
+            } else {
+              lastTapTime = now;
+              if (currentScale > 1) {
+                panStartX = t[0].clientX;
+                panStartY = t[0].clientY;
+                panStartTranslateX = translateX;
+                panStartTranslateY = translateY;
+              }
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener(
+        "touchmove",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            e.preventDefault();
+            const dist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            currentScale = Math.min(
+              4,
+              Math.max(1, initialScale * (dist / initialDist))
+            );
+            applyTransform();
+          } else if (t.length === 1) {
+            if (currentScale > 1) {
+              e.preventDefault();
+              translateX =
+                panStartTranslateX + (t[0].clientX - panStartX) / currentScale;
+              translateY =
+                panStartTranslateY + (t[0].clientY - panStartY) / currentScale;
+              const maxX = Math.max(
+                0,
+                (image.clientWidth - overlay.clientWidth / currentScale) / 2
+              );
+              const maxY = Math.max(
+                0,
+                (image.clientHeight - overlay.clientHeight / currentScale) / 2
+              );
+              translateX = Math.min(maxX, Math.max(-maxX, translateX));
+              translateY = Math.min(maxY, Math.max(-maxY, translateY));
+              applyTransform();
+            } else {
+              e.preventDefault();
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener("touchend", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      overlay.addEventListener("touchcancel", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", onKeyDown);
+      window.__closeLightbox = close;
+
+      requestAnimationFrame(() => overlay?.classList.add("opacity-100"));
+      closeButton.focus();
+    }
+
+    function close() {
+      if (!overlay) return;
+      const el = overlay;
+      overlay = null;
+      window.__closeLightbox = null;
+
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+      lastFocused?.focus();
+      lastFocused = null;
+
+      if (prefersReducedMotion()) {
+        el.remove();
+        return;
+      }
+      const remove = () => el.remove();
+      el.addEventListener("transitionend", remove, { once: true });
+      setTimeout(remove, 250); // fallback in case transitionend never fires
+      el.classList.remove("opacity-100");
+    }
+
+    function onKeyDown(e) {
+      if (e.key === "Escape") {
+        close();
+      } else if (e.key === "Tab") {
+        trapFocus(e);
+      }
+    }
+
+    // Keep keyboard focus inside the open dialog.
+    function trapFocus(e) {
+      if (!overlay) return;
+      const focusables = overlay.querySelectorAll(
+        'a[href], button, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function triggerFromEvent(e) {
+      const image = e.target.closest("img");
+      if (!image || !article.contains(image) || image.closest("a")) return null;
+      return image;
+    }
+
+    function activate(image) {
+      open(image.currentSrc || image.src, image.alt, image);
+    }
+
+    article.addEventListener("click", e => {
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+
+    article.addEventListener("keydown", e => {
+      if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+  }
+  initLightbox();
+
+  if (!window.__lightboxSwapBound) {
+    window.__lightboxSwapBound = true;
+    document.addEventListener("astro:before-swap", () =>
+      window.__closeLightbox?.()
+    );
+  }
+
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>
