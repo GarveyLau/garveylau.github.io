@@ -1,0 +1,555 @@
+<!DOCTYPE html><html dir="ltr" lang="zh-CN" class="overflow-y-scroll scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://blog.garveylau.com/posts/personal-agent-proactivity-context-capabilities/"><meta name="generator" content="Astro v7.0.3"><!-- Primary meta --><title>Personal Agent 的主动性：在用户的需要与自己的能力之间找机会 | GarveyLau</title><meta name="title" content="Personal Agent 的主动性：在用户的需要与自己的能力之间找机会 | GarveyLau"><meta name="description" content="主动性来自用户真实需要与 Agent 可靠能力的交集。结合 Muse、Grok Bot、dots 和前沿研究，用五张图讨论数据事件、能力边界、介入时机，以及怎样从准确的小帮助建立信任。"><meta name="author" content="GarveyLau"><link rel="sitemap" href="/sitemap-index.xml"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:site_name" content="GarveyLau"><meta property="og:title" content="Personal Agent 的主动性：在用户的需要与自己的能力之间找机会 | GarveyLau"><meta property="og:description" content="主动性来自用户真实需要与 Agent 可靠能力的交集。结合 Muse、Grok Bot、dots 和前沿研究，用五张图讨论数据事件、能力边界、介入时机，以及怎样从准确的小帮助建立信任。"><meta property="og:url" content="https://blog.garveylau.com/posts/personal-agent-proactivity-context-capabilities/"><meta property="og:image" content="https://blog.garveylau.com/og.png"><!-- Twitter / X --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://blog.garveylau.com/posts/personal-agent-proactivity-context-capabilities/"><meta property="twitter:title" content="Personal Agent 的主动性：在用户的需要与自己的能力之间找机会 | GarveyLau"><meta property="twitter:description" content="主动性来自用户真实需要与 Agent 可靠能力的交集。结合 Muse、Grok Bot、dots 和前沿研究，用五张图讨论数据事件、能力边界、介入时机，以及怎样从准确的小帮助建立信任。"><meta property="twitter:image" content="https://blog.garveylau.com/og.png"><!-- RSS autodiscovery --><link rel="alternate" type="application/rss+xml" title="GarveyLau" href="https://blog.garveylau.com/rss.xml/"><!-- Filled at runtime by theme.ts to match the current background colour --><meta name="theme-color" content=""><!-- Extra head content injected by child layouts (e.g. JSON-LD, article meta) --><meta property="og:type" content="article"><meta property="article:published_time" content="2026-10-15T10:09:28.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Personal Agent 的主动性：在用户的需要与自己的能力之间找机会 | GarveyLau","datePublished":"2026-10-15T10:09:28.000Z","author":[{"@type":"Person","name":"GarveyLau","url":"https://github.com/GYGG"}]}</script><!--
+      Inline FOUC-prevention script: sets data-theme on <html> before
+      the browser paints. Runs synchronously, no defer/async.
+    --><script>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = stored ?? (prefersDark ? "dark" : "light");
+        const root = document.firstElementChild;
+        root?.setAttribute("data-theme", theme);
+        root?.classList.toggle("dark", theme === "dark");
+        // Expose value so theme.ts can skip re-detection.
+        window.__theme = { value: theme };
+      })();
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.2i1RQzKf.js"></script><link rel="stylesheet" href="/_astro/Footer.Cog-iDZc.css"><style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*),[data-astro-transition-scope]{animation:none!important}}
+</style><style>[data-astro-transition-scope="astro-bztu2lml-1"] { view-transition-name: ai-native-app; }@layer astro { ::view-transition-old(ai-native-app) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(ai-native-app) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(ai-native-app) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(ai-native-app) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-bztu2lml-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-bztu2lml-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head><body class="bg-background font-app text-foreground selection:bg-accent/75 selection:text-accent-foreground flex min-h-svh flex-col"><a id="skip-to-content" href="#main-content" class="bg-background text-accent absolute inset-s-16 -top-full z-50 px-3 py-2 backdrop-blur-lg transition-all focus:top-4">跳转到正文</a><header class="app-layout flex flex-col items-center justify-between sm:flex-row"><div class="border-border bg-background relative flex w-full items-baseline justify-between border-b py-4 sm:items-center sm:py-6"><a href="/" aria-label="GarveyLau 首页" class="brand-wordmark absolute py-1 leading-8 whitespace-nowrap sm:static sm:my-auto sm:leading-none"><img class="brand-symbol" src="/images/brand/prompt-compact.svg" width="32" height="32" alt="" aria-hidden="true"><span class="brand-name">GarveyLau</span></a><nav id="nav-menu" class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"><button id="menu-btn" class="focus-outline self-end p-2 sm:hidden" aria-label="打开菜单" aria-expanded="false" aria-controls="menu-items" data-label-open="打开菜单" data-label-close="关闭菜单"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="hidden" viewBox="0 0 24 24" id="close-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M18 6 6 18M6 6l12 12" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep" viewBox="0 0 24 24" id="menu-icon"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 6h16M7 12h13M10 18h10" /></svg></button><ul id="menu-items" class="[&amp;&gt;li&gt;a]:hover:text-accent mt-4 hidden w-44 grid-cols-2 place-content-center gap-2 sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0 sm:[&amp;&gt;li]:h-8 [&amp;&gt;li&gt;a]:block [&amp;&gt;li&gt;a]:px-4 [&amp;&gt;li&gt;a]:py-3 [&amp;&gt;li&gt;a]:text-center [&amp;&gt;li&gt;a]:font-medium sm:[&amp;&gt;li&gt;a]:px-2 sm:[&amp;&gt;li&gt;a]:py-1"><li class="col-span-2"><a href="/posts/" class="active-nav" aria-current="page">文章</a></li><li class="col-span-2"><a href="/archives/">时间线</a></li><li class="col-span-2"><a href="/search/">搜索</a></li><li class="col-span-2"><a href="/tags/">标签</a></li><li class="col-span-2"><a href="/about/">关于</a></li><li class="col-span-1 flex items-center justify-center"><button id="theme-btn" class="focus-outline hover:[&amp;&gt;svg]:stroke-accent relative size-12 p-4 sm:size-8" title="切换主题" aria-label="auto" aria-live="polite"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z" /></svg><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="absolute top-[50%] left-[50%] translate-[-50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M14.828 14.828a4 4 0 1 0-5.656-5.656 4 4 0 0 0 5.656 5.656M6.343 17.657l-1.414 1.414M6.343 6.343 4.929 4.929M17.657 6.343l1.414-1.414M17.657 17.657l1.414 1.414M4 12H2M12 4V2M20 12h2M12 20v2" /></svg></button></li></ul></nav></div></header><script type="module">function e(){let e=document.querySelector(`#menu-btn`),t=document.querySelector(`#menu-items`),n=document.querySelector(`#menu-icon`),r=document.querySelector(`#close-icon`);if(!e||!t||!n||!r)return;let i=e.dataset.labelOpen??`Open menu`,a=e.dataset.labelClose??`Close menu`;e.addEventListener(`click`,()=>{let o=e.getAttribute(`aria-expanded`)===`true`;e.setAttribute(`aria-expanded`,o?`false`:`true`),e.setAttribute(`aria-label`,o?i:a),t.classList.toggle(`hidden`),t.classList.toggle(`grid`),n.classList.toggle(`hidden`),r.classList.toggle(`hidden`)})}function t(){let e=document.getElementById(`skip-to-content`);e&&e.addEventListener(`click`,e=>{if(e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0)return;e.preventDefault();let t=document.getElementById(`main-content`);t&&(t.setAttribute(`tabindex`,`-1`),t.addEventListener(`blur`,()=>t.removeAttribute(`tabindex`),{once:!0}),t.focus(),t.scrollIntoView({behavior:`smooth`}))})}e(),document.addEventListener(`astro:after-swap`,e),t(),document.addEventListener(`astro:after-swap`,t);</script><div class="app-layout flex items-center justify-start"><a id="back-button" href="/" class="group inline-flex items-center gap-1 hover:text-accent focus-outline hover:text-foreground/75 -ms-2 mt-8 mb-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="m15 6-6 6 6 6" /></svg><span>返回</span></a></div><script type="module">function e(){let e=document.querySelector(`#back-button`),t=sessionStorage.getItem(`backUrl`);t&&e&&(e.href=t)}document.addEventListener(`astro:page-load`,e),e();</script><main id="main-content" class="app-layout post-page" data-pagefind-body><div class="post-heading"><p class="post-eyebrow">AI Native APP</p><h1 style="view-transition-name:personal-agent-proactivity-context-capabilities" class="text-accent inline-block text-2xl font-bold sm:text-3xl">Personal Agent 的主动性：在用户的需要与自己的能力之间找机会</h1><div class="my-2 flex items-center gap-2"><div class="text-muted-foreground flex items-center gap-x-2"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 min-w-5.5" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM16 3v4M8 3v4M4 11h16M7 14h.013M10.01 14h.005M13.01 14h.005M16.015 14h.005M13.015 17h.005M7.01 17h.005M10.01 17h.005" /></svg><time class="text-sm sm:text-base" datetime="2026-10-15T10:09:28.000Z">2026年10月15日</time></div><span aria-hidden="true" class="text-muted-foreground max-sm:hidden hidden">|</span></div><p class="post-description">主动性来自用户真实需要与 Agent 可靠能力的交集。结合 Muse、Grok Bot、dots 和前沿研究，用五张图讨论数据事件、能力边界、介入时机，以及怎样从准确的小帮助建立信任。</p></div><div class="reading-layout"><article id="article" class="mt-8 w-full app-prose max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"><p>最近和同事讨论 Agent 的场景开发，我们反复在说几件事：数据全不全、准不准；Agent 应该怎样工作，什么时候主动找用户；最后怎样交互才合适。讨论的落点很直接：“以最终效果为目标。”</p>
+<p>这让我越来越觉得，晨报、会前准备、会后跟进，可以放在同一个问题下理解：有了准确的用户上下文，Agent 怎样发现自己能帮上的忙？</p>
+<p>我的判断是，<strong>主动性的核心，是从用户的数据和事件中发现需要，再与 Agent 当前能做好的事情取交集。</strong></p>
+<p><img alt="用户确有需要的事情与 Agent 能可靠做好的事情相交，产生候选机会；再根据授权、时机和打扰成本决定是否行动" loading="lazy" decoding="async" width="1600" height="1168" src="/_astro/01-opportunity-intersection.SPn2YpYV_ZcHxv6.webp" srcset=""></p>
+<p><em>图 1：两边都是“事情”的集合。原始数据先用来理解需要，工具和 Skill 则要经过验证，才能成为可靠能力。</em></p>
+<p>晨报、会议总结、提醒，都可以是这个交集产生的结果。SOP 和 workflow 负责把事情做好；主动性还需要判断为什么值得做，为什么是现在，以及这一次做到哪一步。</p>
+<h2 id="先找到需要再决定做什么">先找到需要，再决定做什么</h2>
+<p>“每天早上八点发一份晨报”，规定了触发时间和交付形式。但今天有什么值得注意，仍然需要判断。</p>
+<p>如果只是把日历、消息、待办重新排版，用户看完还得自己找重点。真正有价值的帮助，可能只有一条：下午评审已改用新版材料，而昨天准备的发言还基于旧版。</p>
+<p>这时，Agent 可以核对变化，把影响发言的几处差异整理出来。它不必顺便生成一份完整的日程简报。</p>
+<p>看到一个会议，只能说明有一场会议，不能直接推出“用户需要一份会前报告”。同样，接入邮件工具，也不足以说明 Agent 能可靠处理每一封邮件。</p>
+<p>有时候，交集只够支持“找到缺失的附件”，还不足以支持“完成整个方案”。那就先把附件找准。事情可以很小，但要解决眼前的问题。</p>
+<h2 id="musegrok-bot-和-dots已经有更具体的尝试">Muse、Grok Bot 和 dots，已经有更具体的尝试</h2>
+<p>近期几款 Personal Agent 的公开材料，已经把这种主动性描述得相当具体。先看三个案例。</p>
+<p><img alt="依据官方材料整理的三个主动性案例：Muse从学校邮件发现报名即将截止，Grok Bot跟进搁置对话和停滞交接，dots发现漏开发票并准备好供用户批准" loading="lazy" decoding="async" width="1600" height="1547" src="/_astro/05-product-evidence.CXrRehNC_tOmpv.webp" srcset=""></p>
+<p><em>图 2：依官方材料重绘，分别标明设计者案例、官方能力描述和早期用户案例。它们能说明产品在设计什么，还不能替代独立效果评测。</em></p>
+<h3 id="muse后台做完以后还要判断值不值得说">Muse：后台做完以后，还要判断值不值得说</h3>
+<p>Meta 在 2026 年 9 月的设计说明中写到，Muse 会围绕用户的目标，按计划或相关事件继续工作；后台有了结果，再判断是否值得呈现，只有出现有意义的新信息或需要用户输入时才通知。用户也可以要求降低、提高或关闭主动性。<a href="https://introducing.muse.ai/">Muse 设计说明</a></p>
+<p>设计者举的例子很小，也很具体：在已经委托的开学准备工作中，Muse 从学校邮件里发现孩子的一项报名即将截止，及时发来提醒。它接住的是一个差点被遗漏的需要。</p>
+<p>这个设计最值得借鉴的地方，是把后台工作和通知分开判断。用户不必因为 Agent 每做完一轮事情，就跟着读一条消息。</p>
+<h3 id="grok-bot从前序对话里把搁置的工作接回来">Grok Bot：从前序对话里，把搁置的工作接回来</h3>
+<p>2026 年 8 月的 Grok Bot 发布稿直接提到：它可以跟进被搁置的对话、推动停滞的交接，重新接续之前讨论过的工作；随着协作积累，学习用户的做事方式，判断何时提醒、何时继续推进。<a href="https://x.ai/news/introducing-grok-bot">Grok Bot 发布稿</a></p>
+<p>同一份材料还介绍了示范学习：用户演示一次做法，Bot 将过程保存为 routine，接受纠正，供以后执行。我的理解是，routine 帮它学会怎样做；前序对话与工作状态，则帮助它发现哪里需要继续做。两者正好对应本文讨论的两项基础投入。</p>
+<p>这里也要保留一个区别：官方描述了这些能力，没有给出足以核验长期主动性效果的成功率。它也没有证明 Agent 已能准确评估自己的全部能力边界。</p>
+<h3 id="dots发现一项遗漏先把可以审阅的结果准备好">dots：发现一项遗漏，先把可以审阅的结果准备好</h3>
+<p>OpenAI 在 2026 年 9 月的 dots 发布稿中给出一个早期用户案例：dot 发现用户忘了给一家出版物开票，准备好发票，在用户批准后发送。<a href="https://openai.com/index/introducing-dots/">dots 发布稿</a></p>
+<p>这比“我能帮你管理财务，要试试吗”具体得多。它发现一个未处理事项，完成一项范围清楚的准备工作，再把需要授权的动作交给用户决定。</p>
+<p>发布稿还明确区分了主动研究与其他行动：用户没有在与它互动时，后台主动研究使用已连接应用中的只读工具；发送消息、修改内容等动作，仍需按规则另行审查。主动发现机会，不会自然变成随意行动的权限。</p>
+<p>这三个案例支持的，是一种已经进入产品设计的方向：利用持续上下文发现遗漏或变化，接着形成具体帮助。至于需要是否判断准、交付是否稳定、信任能否长期增加，仍要拿实际使用来验证。</p>
+<h2 id="把两项基础能力做扎实">把两项基础能力做扎实</h2>
+<p>如果要决定主要精力怎么投，我会先看下面两项。每个具体场景，都要拿它们来检查。</p>
+<p><img alt="数据和事件侧建设来源时效、事项关联、状态变化与用户纠正；可靠能力侧建设必要条件、工作方法、交付核验与退出条件，两者共同支持主动决策" loading="lazy" decoding="async" width="1600" height="1248" src="/_astro/02-two-investments.BM87v-bw_12UKsK.webp" srcset=""></p>
+<p><em>图 3：这是投入方向，图形面积不代表预算比例。场景负责提供验证现场。</em></p>
+<h3 id="数据和事件知道用户现在处于什么状态">数据和事件：知道用户现在处于什么状态</h3>
+<p>主动 Agent 往往没有用户在本轮请求里补齐背景。它得自己知道，用户正在推进什么，什么发生了变化，哪些事情已经做过，哪些判断已经过期。</p>
+<p>一条“明天下午评审”的日历，只能告诉它时间。判断是否需要帮忙，还要知道评审目标、最新材料、用户职责，以及是否已经准备过。这些信息可能散落在聊天、文档和历史任务中。</p>
+<p>所以我会围绕正在推进的事情组织上下文：把相关材料接起来，保留来源和更新时间，区分明确事实与模型推断。事件负责提示哪部分现状值得重新检查。</p>
+<p>收到会议纪要，并不自动意味着要跟进。用户负责的承诺还未完成，截止时间又临近，才形成具体的帮助机会。后来用户说“这件事取消了”，旧跟进也应失效。</p>
+<p>工程上可以先去重、关联和合并事件，再取回受影响事项的上下文。无需每来一条消息，就让大模型重新阅读全部历史。定时唤醒可以补查遗漏、安排交付时间；具体做什么，仍由当时的状态决定。</p>
+<p>ProAgentBench 将主动协助拆为“何时帮助”和“怎样帮助”，使用真实使用记录构造评测。但其时机标签主要借助用户实际调用 LLM 的行为，不能把“此时求助过”直接当成“此时适合被主动打断”。这也提醒我们，数据标签与实际体验之间，还需要验证。<a href="https://arxiv.org/html/2602.04482v2">ProAgentBench 论文</a></p>
+<h3 id="可靠能力知道当前能把什么做好">可靠能力：知道当前能把什么做好</h3>
+<p>能力要具体到输入条件、工作方法和交付标准。“会生成会议摘要”还太宽泛，我更想知道：缺少关键材料时怎么办，是否会混用旧版本，结果怎样核验，遇到什么情况必须停止。</p>
+<p>同样是会前准备，有完整材料时能核对差异，只有零散消息时可能只能指出缺口。跨系统权限不齐时，交付范围还会缩小。能力边界需要跟着输入条件和运行状态变化。</p>
+<p>SOP、工具说明和运行时约束可以规定怎么做；是否做得好，要靠真实样本验证。每项准备主动使用的能力，都应该配上反例：材料过期、用户已经处理、权限不足时，会不会停下来。</p>
+<p>AgentAbstain 就构造成对任务：只改变少量条件，原本应该执行的任务就变成应该停止。研究发现，执行能力和停止行动的能力并不一致。它使用合成沙箱，不能代表个人助手的日常表现，但这种测试方法值得采用。<a href="https://arxiv.org/html/2607.10059v1">AgentAbstain 论文</a></p>
+<h2 id="同一个事件可以有不同的下一步">同一个事件，可以有不同的下一步</h2>
+<p>数据和能力具备以后，还要选择介入方式。沿用前面的评审例子，同一条材料更新事件，就可能产生不同回应。</p>
+<p><img alt="同一条评审材料更新事件，根据紧急程度、必要条件及是否已处理，分别产生及时提醒、后台准备、必要澄清或保持安静；工作时机与消息时机分开判断" loading="lazy" decoding="async" width="1600" height="1336" src="/_astro/03-same-event-different-actions.cTM_EMGt_2dtdvO.webp" srcset=""></p>
+<p><em>图 4：这是上下文驱动的判断示例。后台处理与面向用户的通知，分别做决定。</em></p>
+<p>我希望系统先形成一个有依据的候选事项：可能需要什么，为什么现在值得处理，哪项可靠能力能接住。再决定投入多少、何时交付，以及是否需要打扰用户。</p>
+<p>执行前，还要重新核对状态。发现机会到真正行动之间，用户可能已经处理完，会议也可能取消了。</p>
+<p>“先做准备”“稍后呈现”“问一个必要问题”“保持安静”，都应该是正常结果。没有值得做的事，这一轮可以直接结束，否则系统很容易为了完成触发而制造内容。</p>
+<p>2026 年 9 月的 Foundations of Proactive Agents 把任务能力、计算时机和信任放在一起讨论。其 30 人情境问卷提示，即使结果正确，超出用户希望的介入深度，也可能损害信任。这是阅读设定情境和模拟日志的研究，仍需长期真实使用验证；但它指出了“做对”之外的另一个维度：做到哪一步。<a href="https://arxiv.org/html/2609.37267v1">Foundations of Proactive Agents 论文</a></p>
+<h2 id="用一次准确的小帮助开始建立信任">用一次准确的小帮助，开始建立信任</h2>
+<p>主动消息很容易变成能力推销：发现用户有会议，就介绍自己能整理资料、分析风险、生成发言稿，最后问要不要试试。</p>
+<p>用户仍要判断该做什么，补背景，再发起任务。我更希望 Agent 在已有上下文和授权内，先接住一小块具体工作。</p>
+<p><img alt="评审准备示例：发现版本差异，交付核验后的可用笔记，由用户决定是否委托持续跟进；用户反馈更新后续判断，权限不会自动升级" loading="lazy" decoding="async" width="1600" height="1232" src="/_astro/04-small-help-to-trust.AomgY-39_ZMT25o.webp" srcset=""></p>
+<p><em>图 5：协作可以这样逐渐延续。这是设计方向，图中没有量化信任增长，也不预设用户一定扩大委托。</em></p>
+<p>例如这条消息就足够了：“下午评审换了新版材料，两处变化会影响你昨天准备的发言。我整理了差异，并标出需要你决定的一处，放在会前笔记里。”</p>
+<p>它说明了为什么相关、完成了什么、还需要判断什么。找到缺失材料、定位版本变化、准备好一项待办，都可以成为这样的帮助。“做到位”还包括把结果放到用户接着工作的位置，减少重新抄写、整理和核对。</p>
+<p>用户逐渐知道它在哪些事情上可靠，才有机会形成更明确的持续委托。对外发送、修改共享数据等权限，仍需相应授权，不能靠点击或使用次数自动升级。</p>
+<p>克制也需要代码支持。Omi 在 2026 年 9 月合入过通知预算修复：原先按 UTC 日期重置，可能让用户在同一个本地日用到两轮额度，后来改为按用户时区计算。源码合并不代表整体通知体验已经做好，但这个细节说明，“不要过度打扰”需要落实成机制。<a href="https://github.com/BasedHardware/omi/pull/15167">Omi 通知预算修复</a></p>
+<p>多个能力应该共用用户的注意力预算。同一件事提过了，其他场景也应知道；投递失败后的重试，也不能变成一次新的打扰。</p>
+<h2 id="用少量场景检验完整体验">用少量场景，检验完整体验</h2>
+<p>从零开始，我会选择少量真实场景，把图 3 中的数据和能力做扎实，再验证图 4 的介入判断和图 5 的交付体验。前两项应占主要精力。数据还不准、交付还不稳时，增加场景数量只会让问题更分散。</p>
+<p>每个场景也需要有人对最终体验负责：检查数据缺口，观察为什么介入，核对产物，听用户反馈。只分别完成一个 Skill、一个事件接口、一张卡片，还不足以说明组合起来好用。</p>
+<p>评测应同时保留“应该主动”和“不该主动”的样本，分别看需求是否判断准、交付能否使用、纠正成本、重复打扰和遗漏的机会。点击不直接等于成功，沉默也未必代表拒绝。</p>
+<p>这里可以借鉴 π-Bench。它是一套 2026 年 5 月公开的个人助手评测基准，包含 100 个多轮任务和 5 类职业角色，考察 Agent 能否从历史对话、工作区和任务依赖中，主动发现用户没有说全的要求。<a href="https://arxiv.org/html/2605.14678v3">π-Bench 论文</a></p>
+<p>它分别评价两件事：Agent 有没有自己发现并处理隐藏需求（或者主动问出关键问题），以及最终产物有没有满足任务要求。用户一路补充提醒后终于完成，与 Agent 自己接住背景后完成，会得到不同的主动性评价。</p>
+<p>这套基准也允许事件或 heartbeat 发起会话，但核心仍是需求发现与任务完成。它不是对日常通知时机、打扰成本或长期信任的真实用户检验。所以我借鉴的是它的评价维度，不把它当作产品主动性已经成功的证明。</p>
+<p>这些图和设计建议，还需要在实际使用中验证。我希望形成的协作关系很具体：它知道我眼下在忙什么，也知道自己能接住哪一小块。在我还没开口的时候，把那一块认真做好，交到我手边。</p>
+<h2 id="参考资料">参考资料</h2>
+<h3 id="产品设计与工程实践">产品设计与工程实践</h3>
+<ul>
+<li><a href="https://introducing.muse.ai/">How We Designed Muse</a>，2026 年 9 月。围绕目标和事件持续工作，以及后台结果是否值得通知的设计；包含从学校邮件发现报名截止的使用案例。</li>
+<li><a href="https://x.ai/news/introducing-grok-bot">Introducing Grok Bot</a>，2026 年 8 月 11 日。跟进搁置对话、推动停滞交接，以及通过示范和纠正学习 routine 的官方说明。</li>
+<li><a href="https://openai.com/index/introducing-dots/">Introducing dots</a>，2026 年 9 月 29 日。发现漏开发票并准备交付的早期用户案例，以及只读主动研究与后续行动审查的区分。</li>
+<li><a href="https://github.com/BasedHardware/omi/pull/15167">Omi：按用户本地日期计算主动通知预算</a>，2026 年 9 月 27 日合并。一个将减少打扰落实到通知预算和时区处理的工程案例。</li>
+</ul>
+<h3 id="主动性与能力边界研究">主动性与能力边界研究</h3>
+<ul>
+<li><a href="https://arxiv.org/html/2605.14678v3">π-Bench: Evaluating Proactive Personal Assistant Agents in Long-Horizon Workflows</a>，2026 年 5 月。将主动发现隐藏需求与最终任务完成分别评价。</li>
+<li><a href="https://arxiv.org/html/2602.04482v2">ProAgentBench: Evaluating LLM Agents for Proactive Assistance with Real-World Data</a>，2026 年 2 月。基于真实使用记录，研究何时帮助与怎样帮助。</li>
+<li><a href="https://arxiv.org/html/2607.10059v1">AgentAbstain: Do LLM Agents Know When Not to Act?</a>，2026 年 7 月。通过成对任务，检查执行能力与停止行动能力的差异。</li>
+<li><a href="https://arxiv.org/html/2609.37267v1">Foundations of Proactive Agents: Principles, Technical Layers, and Proactivity-Gym</a>，2026 年 9 月。联合讨论任务能力、计算时机和信任，并提供模拟评测与情境问卷研究。</li>
+</ul></article><aside class="reading-toc" aria-label="文章目录"><details open><summary>本文目录</summary><nav><a href="#先找到需要再决定做什么">先找到需要，再决定做什么</a><a href="#musegrok-bot-和-dots已经有更具体的尝试">Muse、Grok Bot 和 dots，已经有更具体的尝试</a><a href="#把两项基础能力做扎实">把两项基础能力做扎实</a><a href="#同一个事件可以有不同的下一步">同一个事件，可以有不同的下一步</a><a href="#用一次准确的小帮助开始建立信任">用一次准确的小帮助，开始建立信任</a><a href="#用少量场景检验完整体验">用少量场景，检验完整体验</a><a href="#参考资料">参考资料</a></nav></details></aside></div><hr class="my-8 border-dashed"><div id="btt-btn-container" class="fixed inset-e-4 bottom-8 z-50 md:sticky md:inset-e-auto md:float-end md:me-1 translate-y-14 opacity-0 transition duration-500"><button data-button="back-to-top" class="group bg-background relative px-2 py-1 size-14 rounded-full shadow-xl md:h-8 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none md:bg-background/35 md:bg-clip-padding md:backdrop-blur-lg"><span id="progress-indicator" class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"></span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block rotate-90 md:hidden" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><span class="group-hover:text-accent sr-only text-sm md:not-sr-only"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M12 5v14M16 9l-4-4M8 9l4-4" /></svg>返回顶部</span></button></div><script data-astro-rerun>
+  function backToTop() {
+    const rootElement = document.documentElement;
+    const btnContainer = document.querySelector("#btt-btn-container");
+    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
+    const progressIndicator = document.querySelector("#progress-indicator");
+
+    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
+      return;
+
+    backToTopBtn.addEventListener("click", () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
+    let lastVisible = null;
+    function handleScroll() {
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+      const scrollTop = rootElement.scrollTop;
+      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
+
+      progressIndicator.style.setProperty(
+        "background-image",
+        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
+      );
+
+      const isVisible = scrollTop / scrollTotal > 0.3;
+
+      if (isVisible !== lastVisible) {
+        btnContainer.classList.toggle("opacity-100", isVisible);
+        btnContainer.classList.toggle("translate-y-0", isVisible);
+        btnContainer.classList.toggle("opacity-0", !isVisible);
+        btnContainer.classList.toggle("translate-y-14", !isVisible);
+        lastVisible = isVisible;
+      }
+    }
+
+    let ticking = false;
+    document.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+  backToTop();
+</script><ul class="mt-4 mb-8 flex flex-wrap gap-4 sm:my-8"><li><a data-astro-transition-scope="astro-bztu2lml-1" href="/tags/ai-native-app/" class="flex items-center gap-0.5 border-foreground border-b-2 border-dashed hover:border-accent hover:text-accent hover:-mt-0.5 focus-visible:text-accent focus-visible:border-none text-sm"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="opacity-80 size-4" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 9h14M5 15h14M11 4 7 20M17 4l-4 16" /></svg>AI Native APP</a></li></ul><hr class="my-8 border-dashed"><div data-pagefind-ignore class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2"><a href="/posts/personal-agent-tone-readable-messages/" class="flex w-full gap-1 hover:opacity-75"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block flex-none rtl:rotate-180" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M5 12h14M5 12l6 6M5 12l6-6" /></svg><div><span>上一篇</span><div class="text-accent/85 text-sm">Personal Agent 的说话语气：像懂行的朋友一样聊天</div></div></a></div></main><footer class="app-layout mt-auto"><div class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"><div class="flex flex-wrap items-center gap-1"><a href="https://github.com/GYGG" title="GarveyLau on Github" class="group inline-flex items-center gap-1 hover:text-accent p-2 hover:rotate-6 sm:p-1"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z" /><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg><span class="sr-only">GarveyLau on Github</span></a></div><div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row"><span>版权所有 &#169; 2026</span><span class="hidden sm:inline">&nbsp;|&nbsp;</span><span>保留所有权利。</span></div></div></footer><script type="module">var e=`theme`,t=`light`,n=`dark`;function r(){return localStorage.getItem(e)||(window.matchMedia(`(prefers-color-scheme: dark)`).matches?n:t)}var i=window.__theme?.value??r();function a(){localStorage.setItem(e,i),o()}function o(){let e=document.firstElementChild;e?.setAttribute(`data-theme`,i),e?.classList.toggle(`dark`,i===n),document.querySelector(`#theme-btn`)?.setAttribute(`aria-label`,i);let t=window.getComputedStyle(document.body).backgroundColor;document.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}function s(){o(),document.querySelector(`#theme-btn`)?.addEventListener(`click`,()=>{i=i===t?n:t,a()})}s(),document.addEventListener(`astro:after-swap`,s),document.addEventListener(`astro:before-swap`,e=>{let t=document.querySelector(`meta[name='theme-color']`)?.getAttribute(`content`);t&&e.newDocument.querySelector(`meta[name='theme-color']`)?.setAttribute(`content`,t)}),window.matchMedia(`(prefers-color-scheme: dark)`).addEventListener(`change`,({matches:e})=>{i=e?n:t,a()});</script></body></html><script data-astro-rerun>
+  function createProgressBar() {
+    const progressContainer = document.createElement("div");
+    progressContainer.className =
+      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
+
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-accent";
+    progressBar.id = "myBar";
+
+    progressContainer.appendChild(progressBar);
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+
+  function addHeadingLinks() {
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+      heading.appendChild(link);
+    }
+  }
+  addHeadingLinks();
+
+  function attachCopyButtons() {
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const computedStyle = getComputedStyle(codeBlock);
+      const hasFileNameOffset =
+        computedStyle.getPropertyValue("--file-name-offset").trim() !== "";
+
+      const topClass = hasFileNameOffset
+        ? "top-(--file-name-offset)"
+        : "-top-3";
+
+      const copyButton = document.createElement("button");
+      copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
+      copyButton.innerHTML = copyButtonLabel;
+      codeBlock.setAttribute("tabindex", "0");
+      codeBlock.appendChild(copyButton);
+
+      codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+
+      copyButton.addEventListener("click", async () => {
+        await copyCode(codeBlock, copyButton);
+      });
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      button.innerText = "Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    }
+  }
+  attachCopyButtons();
+
+  /** Accessible image lightbox for article images. */
+  function initLightbox() {
+    const article = document.getElementById("article");
+    if (!article) return;
+
+    const prefersReducedMotion = () =>
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let overlay = null;
+    let lastFocused = null;
+
+    // Defer attribute mutations so they don't push the LCP timestamp.
+    // Event listeners below use delegation and don't need the attributes to exist yet.
+    requestAnimationFrame(() => {
+      const images = Array.from(article.querySelectorAll("img"));
+      for (const image of images) {
+        if (image.closest("a")) continue;
+        image.setAttribute("role", "button");
+        image.setAttribute("tabindex", "0");
+        image.setAttribute("aria-haspopup", "dialog");
+        image.setAttribute(
+          "aria-label",
+          image.alt ? `Zoom image: ${image.alt}` : "Zoom image"
+        );
+      }
+    });
+
+    function open(src, alt, trigger) {
+      if (overlay) return;
+      lastFocused = trigger ?? document.activeElement;
+
+      overlay = document.createElement("div");
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute(
+        "aria-label",
+        alt ? `Image preview: ${alt}` : "Image preview"
+      );
+      overlay.className =
+        "fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-200 motion-reduce:transition-none";
+
+      const closeButton = document.createElement("button");
+      closeButton.type = "button";
+      closeButton.setAttribute("aria-label", "Close image preview");
+      closeButton.className =
+        "absolute end-4 top-4 rounded p-2 text-3xl leading-none text-white";
+      closeButton.innerHTML = "&#10005;";
+      closeButton.addEventListener("click", close);
+
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = "";
+      image.className =
+        "max-h-[90dvh] max-w-[90dvw] cursor-default object-contain";
+
+      overlay.append(closeButton, image);
+      overlay.addEventListener("click", e => {
+        if (e.target === overlay && currentScale <= 1) close();
+      });
+
+      let currentScale = 1;
+      let translateX = 0;
+      let translateY = 0;
+      let initialDist = 0;
+      let initialScale = 1;
+      let panStartX = 0;
+      let panStartY = 0;
+      let panStartTranslateX = 0;
+      let panStartTranslateY = 0;
+      let lastTapTime = 0;
+
+      function applyTransform() {
+        image.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+      }
+
+      function resetTransform() {
+        currentScale = 1;
+        translateX = 0;
+        translateY = 0;
+        image.style.transform = "";
+      }
+
+      overlay.addEventListener(
+        "touchstart",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            initialDist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            initialScale = currentScale;
+          } else if (t.length === 1) {
+            const now = Date.now();
+            if (now - lastTapTime < 300) {
+              e.preventDefault();
+              if (currentScale > 1) {
+                resetTransform();
+              } else {
+                currentScale = 2;
+                translateX = 0;
+                translateY = 0;
+                applyTransform();
+              }
+              lastTapTime = 0;
+              panStartX = t[0].clientX;
+              panStartY = t[0].clientY;
+              panStartTranslateX = translateX;
+              panStartTranslateY = translateY;
+            } else {
+              lastTapTime = now;
+              if (currentScale > 1) {
+                panStartX = t[0].clientX;
+                panStartY = t[0].clientY;
+                panStartTranslateX = translateX;
+                panStartTranslateY = translateY;
+              }
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener(
+        "touchmove",
+        e => {
+          const t = e.touches;
+          if (t.length === 2) {
+            e.preventDefault();
+            const dist = Math.hypot(
+              t[1].clientX - t[0].clientX,
+              t[1].clientY - t[0].clientY
+            );
+            currentScale = Math.min(
+              4,
+              Math.max(1, initialScale * (dist / initialDist))
+            );
+            applyTransform();
+          } else if (t.length === 1) {
+            if (currentScale > 1) {
+              e.preventDefault();
+              translateX =
+                panStartTranslateX + (t[0].clientX - panStartX) / currentScale;
+              translateY =
+                panStartTranslateY + (t[0].clientY - panStartY) / currentScale;
+              const maxX = Math.max(
+                0,
+                (image.clientWidth - overlay.clientWidth / currentScale) / 2
+              );
+              const maxY = Math.max(
+                0,
+                (image.clientHeight - overlay.clientHeight / currentScale) / 2
+              );
+              translateX = Math.min(maxX, Math.max(-maxX, translateX));
+              translateY = Math.min(maxY, Math.max(-maxY, translateY));
+              applyTransform();
+            } else {
+              e.preventDefault();
+            }
+          }
+        },
+        { passive: false }
+      );
+
+      overlay.addEventListener("touchend", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      overlay.addEventListener("touchcancel", e => {
+        if (e.touches.length === 0 && currentScale <= 1.05) {
+          resetTransform();
+        }
+      });
+
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", onKeyDown);
+      window.__closeLightbox = close;
+
+      requestAnimationFrame(() => overlay?.classList.add("opacity-100"));
+      closeButton.focus();
+    }
+
+    function close() {
+      if (!overlay) return;
+      const el = overlay;
+      overlay = null;
+      window.__closeLightbox = null;
+
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+      lastFocused?.focus();
+      lastFocused = null;
+
+      if (prefersReducedMotion()) {
+        el.remove();
+        return;
+      }
+      const remove = () => el.remove();
+      el.addEventListener("transitionend", remove, { once: true });
+      setTimeout(remove, 250); // fallback in case transitionend never fires
+      el.classList.remove("opacity-100");
+    }
+
+    function onKeyDown(e) {
+      if (e.key === "Escape") {
+        close();
+      } else if (e.key === "Tab") {
+        trapFocus(e);
+      }
+    }
+
+    // Keep keyboard focus inside the open dialog.
+    function trapFocus(e) {
+      if (!overlay) return;
+      const focusables = overlay.querySelectorAll(
+        'a[href], button, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function triggerFromEvent(e) {
+      const image = e.target.closest("img");
+      if (!image || !article.contains(image) || image.closest("a")) return null;
+      return image;
+    }
+
+    function activate(image) {
+      open(image.currentSrc || image.src, image.alt, image);
+    }
+
+    article.addEventListener("click", e => {
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+
+    article.addEventListener("keydown", e => {
+      if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+      const image = triggerFromEvent(e);
+      if (!image) return;
+      e.preventDefault();
+      activate(image);
+    });
+  }
+  initLightbox();
+
+  if (!window.__lightboxSwapBound) {
+    window.__lightboxSwapBound = true;
+    document.addEventListener("astro:before-swap", () =>
+      window.__closeLightbox?.()
+    );
+  }
+
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+</script>
